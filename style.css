@@ -1,0 +1,1217 @@
+:root {
+  --bg-main: #ffffff;
+  --bg-sidebar: #2c3e50;
+  --text-main: #333333;
+  --text-sidebar: #ecf0f1;
+  --accent: #3498db;
+  --accent-hover: #2980b9;
+  --practice-color: #2ecc71;
+  --code-bg: #f4f6f8;
+  --border-color: #ddd;
+}
+
+[data-theme="dark"] {
+  --bg-main: #181a1b;
+  --bg-sidebar: #111111;
+  --text-main: #e8e6e3;
+  --text-sidebar: #999999;
+  --accent: #f39c12;
+  --code-bg: #2b2b2b;
+  --border-color: #444;
+}
+
+/* Універсальне скидання та захист ширини */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* Забороняємо сторінці скролитися вправо/вліво */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+/* Контейнер для вітання */
+.welcome-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.welcome-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: var(--accent);
+}
+
+/* Вирівнювання тексту по ширині */
+.welcome-text {
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 30px;
+  color: var(--text-main);
+}
+
+/* Картка зі списком (щоб не зливалося) */
+.welcome-card {
+  background: rgba(0, 0, 0, 0.05); /* Легкий фон для світлої теми */
+  border: 1px solid var(--border-color);
+  border-left: 5px solid var(--accent);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 35px;
+}
+
+[data-theme="dark"] .welcome-card {
+  background: rgba(255, 255, 255, 0.03); /* Легкий фон для темної теми */
+}
+
+.card-subtitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+/* Стилізація списку */
+.welcome-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: justify; /* Вирівнювання тексту в списку */
+}
+
+.welcome-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.welcome-list li span {
+  margin-right: 15px;
+  font-size: 20px;
+  flex-shrink: 0; /* Щоб іконка не стискалася */
+}
+
+.welcome-footer-text {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Центрування кнопки */
+.welcome-action {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-hero {
+  padding: 18px 45px;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 176, 155, 0.3);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .btn-hero {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.btn-hero:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопка теми (ПРАВА ЧАСТИНА) */
+.btn-theme-floating {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  padding: 10px 15px;
+  background: var(--bg-sidebar);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+
+.btn-theme-floating:hover {
+  background: var(--accent);
+}
+
+/* Сайдбар */
+.sidebar {
+  width: 320px;
+  background-color: var(--bg-sidebar);
+  color: var(--text-sidebar);
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #1a252f;
+}
+.sidebar-header h2 {
+  margin: 0;
+  color: var(--accent);
+}
+
+.menu-container {
+  padding: 15px;
+}
+
+/* Згортання блоків меню */
+.block-toggle {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 15px 5px 10px 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.block-toggle:hover {
+  color: white;
+}
+
+.block-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* За замовчуванням сховано */
+}
+
+.block-list.open {
+  display: block; /* Відкрито */
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 15px;
+  color: var(--text-sidebar);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.nav-link.active {
+  background: var(--accent);
+  color: white;
+}
+
+.practice {
+  border-left: 4px solid var(--practice-color);
+}
+
+/* ========================================= */
+/* === СУЧАСНЕ ВІКНО ВХОДУ (МОДАЛКА) === */
+/* ========================================= */
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: var(--bg-main);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ВИПРАВЛЕННЯ КОЛЬОРУ ТЕКСТУ */
+.modal-content h2 {
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+
+.modal-description {
+  color: var(--text-main) !important; /* Гарантуємо, що текст не злиється */
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* Додамо трохи анімації для входу (опціонально) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.shake-animation { animation: shake 0.2s ease-in-out 0s 2; }
+
+.modal-note {
+  font-size: 14px;
+  color: var(--text-main);
+  opacity: 0.5;
+  margin-top: 20px;
+}
+
+#username-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+#username-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+
+
+
+/* --- Сучасна Картка Користувача у Меню --- */
+.sidebar-user-card {
+  background: linear-gradient(145deg, #2c3e50, #1a252f);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 12px 15px;
+  margin: 15px; /* Відступи від країв меню */
+  margin-bottom: 25px; /* Відступ до списку уроків */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Маленька зелена смужка зліва для стилю */
+.sidebar-user-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #00b09b;
+  box-shadow: 0 0 10px #00b09b;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 176, 155, 0.1);
+  border: 1px solid rgba(0, 176, 155, 0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  flex-shrink: 0; /* Щоб аватар не стискався */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden; /* Щоб довгі імена не ламали дизайн */
+}
+
+.user-role {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #8e9bb0;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+#user-display {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Додає "..." якщо ім'я задовге */
+}
+
+/* Кнопка виходу з іконкою */
+#switch-user-btn {
+  background: transparent;
+  border: none;
+  color: #ff6b6b;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+#switch-user-btn:hover {
+  background: rgba(255, 107, 107, 0.15);
+}
+
+.logout-icon {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Основна частина та контент */
+.content {
+  margin-left: 320px; /* Звільняємо місце для меню зліва */
+  padding: 50px;
+  flex-grow: 1;
+  line-height: 1.7;
+  box-sizing: border-box; /* Гарантує, що відступи не зламають ширину */
+}
+
+.lesson-section {
+  display: none;
+  max-width: 900px; /* Обмежуємо ширину тексту для комфортного читання */
+  margin: 0 auto;   /* МАГІЯ: автоматично центрує урок посередині сторінки! */
+}
+
+.lesson-section.active {
+  display: block;
+  animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Типографіка контенту */
+
+pre {
+  background: #1e1e1e; /* Темний фон як у VS Code */
+  color: #d4d4d4; /* Світлий текст коду */
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+  font-size: 1.05rem;
+}
+
+/* Окремі слова в тексті (наприклад, let або const) */
+code {
+  font-family: Consolas, monospace;
+  color: #2980b9; /* Синій колір у світлій темі */
+  background: #ebf5fb; /* Легкий блакитний фон */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Щоб код у <pre> не мав синього фону, як окремі слова */
+pre code {
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  font-weight: normal;
+}
+
+[data-theme="dark"] code {
+  color: #5dade2; /* Світліший синій для темної теми */
+  background: #1a252f;
+}
+
+.practice-card {
+  background: var(--accent);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+.practice-card h3 {
+  margin-top: 0;
+}
+.practice-card code {
+  color: #333;
+  background: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* --- Стилі для Наскрізного проєкту --- */
+.special-project-block {
+  margin-top: 30px;
+  border-top: 2px dashed rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+}
+
+.spaceship-link {
+  background: linear-gradient(
+    135deg,
+    #8e44ad,
+    #2980b9
+  ); /* Космічний градієнт */
+  color: white !important;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.spaceship-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(142, 68, 173, 0.6);
+  background: linear-gradient(135deg, #9b59b6, #3498db);
+}
+
+/* --- Прогрес-бар --- */
+/* Контейнер для всього блоку прогресу в сайдбарі */
+.sidebar-progress-section {
+  padding: 0 20px;
+  margin-bottom: 25px;
+}
+
+/* Рядок з написом та відсотками */
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-sidebar);
+  opacity: 0.8;
+}
+
+#progress-percent-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+/* "Рейка" прогрес-бару */
+.progress-container-sidebar {
+  width: 100%;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.2); /* Темна основа */
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Сама заповнена частина */
+.progress-bar-fill {
+  height: 100%;
+  width: 0%; /* Керується через JS */
+  background: linear-gradient(90deg, #00b09b, #96c93d);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 176, 155, 0.4);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Корекція для темної теми */
+[data-theme="dark"] .progress-container-sidebar {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.progress-stats-text {
+  font-size: 14px;
+  color: var(--text-sidebar);
+  opacity: 0.7;
+  margin-top: 8px;
+ font-weight: 500;
+}
+
+.progress-stats-text {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.user-rank {
+    color: var(--accent-blue); /* Твій основний синій колір */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+/* Якщо курс пройдено на 100% - ранг "горить" золотим */
+.user-rank:contains("Капітан") {
+    color: #ffca28;
+    text-shadow: 0 0 10px rgba(255, 202, 40, 0.4);
+}
+
+
+/* ================= */
+/* --- Кнопка завершення уроку --- */
+.complete-btn {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 40px auto 10px auto;
+  padding: 12px 20px;
+  background-color: #2c3e50;
+  color: white;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.complete-btn:hover {
+  background-color: #34495e;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Стиль кнопки, коли урок пройдено */
+.complete-btn.completed {
+  background-color: #27ae60;
+  border-style: solid;
+  border-color: #2ecc71;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #34495e;
+}
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ========================================= */
+/* === СТАНДАРТНІ КНОПКИ (У т.ч. CodePen) === */
+/* ========================================= */
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1e1e1e; /* Темний колір, який точно не злиється з фоном */
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Для темної теми зробимо кнопку трохи яскравішою */
+[data-theme="dark"] .btn {
+  background-color: var(--accent);
+  color: #000000 !important;
+}
+
+#scrollToTop {
+  display: none; /* Схована за замовчуванням */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #00b09b;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+#scrollToTop:hover {
+  background-color: #008a7a;
+  transform: translateY(-5px);
+}
+
+/* Клас, який скрипт буде додавати автоматично */
+.nav-link.active {
+  background: rgba(0, 176, 155, 0.2);
+  color: #00b09b !important;
+  border-left: 3px solid #00b09b;
+  font-weight: bold;
+}
+
+/* Обгортка для коду: обов'язково relative, щоб кнопка трималася всередині неї */
+pre {
+    position: relative;
+    padding-top: 40px !important; /* Робимо відступ зверху, щоб кнопка не перекривала код */
+}
+
+/* Дизайн нашої кнопки копіювання */
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Клас, який додасться на 2 секунди після успішного копіювання */
+.copy-btn.copied {
+    background: #00b09b; /* Твій фірмовий зелений колір */
+    color: white;
+    font-weight: bold;
+}
+
+/* --- Адаптація картки практики для темної теми --- */
+[data-theme="dark"] .practice-card {
+  background-color: #222527; /* М'який темний фон замість яскравого помаранчевого */
+  border: 1px solid var(--border-color);
+  border-left: 5px solid var(--accent); /* Помаранчевий акцент зліва */
+  color: var(--text-main);
+}
+
+/* Виправляємо відображення міні-коду всередині картки для темної теми */
+[data-theme="dark"] .practice-card code {
+  background-color: #111111; 
+  color: var(--accent); /* Помаранчевий текст для коду */
+  border: 1px solid #333;
+}
+
+[data-theme="dark"] .btn-theme-floating {
+  border: 1px solid var(--border-color);
+  background-color: #2b2b2b;
+}
+
+/* Щоб довгий код не ламав ширину сторінки на телефоні */
+pre[class*="language-"], 
+code[class*="language-"] {
+  max-width: 100vw; 
+  overflow-x: auto !important; /* Дозволяємо скролити тільки сам блок коду, а не всю сторінку */
+  box-sizing: border-box;
+}
+
+/* --- СТИЛІ ЦЕНТРУ МОДЕРНІЗАЦІЇ --- */
+/* Загальні стилі карток (для обох тем) */
+.milestone-card {
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px; /* Відступ між картками */
+    border: 1px solid transparent;
+}
+
+/* СВІТЛА ТЕМА (Default / data-theme="light") */
+body[data-theme="light"] .milestone-card {
+    background-color: #f8f9fa; /* Світло-сірий фон */
+    border-color: #dee2e6;     /* М'яка межа */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body[data-theme="light"] .milestone-card h3 {
+    color: #1a73e8; /* Синій колір для заголовків у світлій темі */
+}
+
+body[data-theme="light"] .milestone-card.completed {
+    background-color: #e8f5e9; /* Світло-зелений фон при виконанні */
+    border-color: #2ecc71;
+}
+
+/* ТЕМНА ТЕМА (data-theme="dark") */
+body[data-theme="dark"] .milestone-card {
+    background-color: #161b22;
+    border-color: #30363d;
+}
+
+body[data-theme="dark"] .milestone-card.completed {
+    background-color: rgba(46, 204, 113, 0.05);
+    border-color: #2ecc71;
+}
+
+/* Текст та чекбокси всередині карток */
+.task-list .checkbox-label {
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+body[data-theme="light"] .task-list .checkbox-label:hover {
+    background: #e9ecef;
+}
+
+body[data-theme="dark"] .task-list .checkbox-label:hover {
+    background: #1c2128;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.task-list .checkbox-label {
+    justify-content: flex-start;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.task-list .checkbox-label:hover {
+    background: #1c2128;
+}
+
+/* --- НОВА ВІЗУАЛІЗАЦІЯ КОРАБЛЯ ORION (CSS) --- */
+
+.ship-visualizer-container {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.6);
+}
+
+#orion-ship-svg {
+    width: 100%;
+    max-width: 600px; /* Трохи більший для деталей */
+}
+
+/* Базові стилі для групи частин */
+.ship-part-group {
+    transition: all 0.6s ease;
+}
+
+/* Контур корпусу відсіку (вимкнено) */
+.ship-part-hull {
+    fill: transparent; /* Корпус тепер прозорий всередині */
+    stroke: #30363d;
+    stroke-width: 1.5;
+    transition: all 0.6s ease;
+}
+
+/* Іконки та текст (вимкнено) */
+.ship-part-icon, .ship-part-label {
+    fill: none;
+    stroke: #30363d;
+    stroke-width: 1;
+    font-size: 10px;
+    font-family: 'Courier New', monospace; /* Космічний шрифт */
+    transition: all 0.6s ease;
+}
+
+/* ========================================= */
+/* Стан АКТИВАЦІЇ (completed) */
+/* ========================================= */
+
+/* Спільні стилі для активованих іконок і тексту */
+.completed .ship-part-icon,
+.completed .ship-part-label {
+    stroke: none;
+    fill: #8b949e; /* Текст і іконки стають видимими, але тьмяними */
+}
+
+/* Активація Халлу (корпусу відсіку) */
+.completed .ship-part-hull {
+    fill: rgba(88, 166, 255, 0.15); /* Прозорий неоновий фон */
+    stroke: #58a6ff;
+    filter: drop-shadow(0 0 5px #58a6ff);
+    animation: orionPulseBlue 2.5s infinite ease-in-out;
+}
+
+/* Спеціальний колір для ФІНАЛЬНОГО етапу (Practice 4) */
+#part-m4.completed .ship-part-hull {
+    fill: rgba(46, 204, 113, 0.15);
+    stroke: #2ecc71;
+    filter: drop-shadow(0 0 5px #2ecc71);
+    animation: orionPulseGreen 2.5s infinite ease-in-out;
+}
+
+/* ========================================= */
+/* КЕЙФРЕЙМИ ПУЛЬСУВАННЯ (Покращені) */
+/* ========================================= */
+
+@keyframes orionPulseBlue {
+    0% {
+        filter: drop-shadow(0 0 3px #58a6ff);
+        opacity: 0.8;
+    }
+    50% {
+        filter: drop-shadow(0 0 12px #58a6ff) drop-shadow(0 0 5px #58a6ff);
+        opacity: 1;
+    }
+    100% {
+        filter: drop-shadow(0 0 3px #58a6ff);
+        opacity: 0.8;
+    }
+}
+
+@keyframes orionPulseGreen {
+    0% {
+        filter: drop-shadow(0 0 3px #2ecc71);
+        opacity: 0.8;
+    }
+    50% {
+        filter: drop-shadow(0 0 12px #2ecc71) drop-shadow(0 0 5px #2ecc71);
+        opacity: 1;
+    }
+    100% {
+        filter: drop-shadow(0 0 3px #2ecc71);
+        opacity: 0.8;
+    }
+}
+
+/* ========================================= */
+/* === АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ === */
+/* ========================================= */
+
+@media (max-width: 900px) {
+  body {
+    flex-direction: column; 
+    display: flex;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+    position: relative; 
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  /* Жорстко фіксуємо контент на мобільних */
+  .content {
+    margin-left: 0 !important; 
+    padding: 20px !important; 
+    width: 100vw !important; /* Чітко по ширині екрану */
+    max-width: 100%;
+  }
+
+  /* Трохи зменшуємо відступи в самому уроці */
+  .lesson-section, .welcome-container {
+    padding: 15px !important;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Коли екран зовсім маленький (Телефони) */
+  
+  .content {
+    padding: 15px 10px;
+  }
+  
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  
+  .btn-hero {
+    width: 100%; /* Кнопка на старті стає на всю ширину екрану телефону */
+    padding: 15px;
+  }
+  
+
+}
+
+/* Основний контейнер інструкції */
+.submission-instruction {
+    background: var(--bg-card, #161b22);
+    border: 1px solid var(--border-color, #30363d);
+    border-left: 5px solid var(--accent-blue, #58a6ff);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+/* Шапка інструкції */
+.instruction-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+.instruction-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--accent-blue);
+}
+
+.instruction-intro {
+    color: var(--text-dim, #8b949e);
+    margin-bottom: 25px;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* СІТКА КРОКІВ - тепер вони стануть в ряд */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* КАРТКА КРОКУ */
+.step-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ЗАГОЛОВОК КРОКУ (Номер + Текст) */
+.step-header-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px; /* Відступ від заголовка до тексту <p> */
+}
+
+.step-badge {
+    background: var(--accent-blue, #58a6ff);
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-card h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--accent-blue);
+}
+
+.step-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-main, #c9d1d9);
+}
+
+
+
+/* ПОРАДИ */
+.tips-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pro-tip {
+    padding: 12px 15px;
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+/* СВІТЛА ТЕМА */
+[data-theme="light"] .submission-instruction {
+    background: #f8f9fa;
+}
+[data-theme="light"] .step-card {
+    background: #ffffff;
+    border-color: #dee2e6;
+}
+[data-theme="light"] .step-card p {
+    color: #444;
+}
+
+/* === Блок для вставки відео === */
+/* Основний контейнер з легким кольоровим відтінком */
+.video-future-box {
+    position: relative;
+    margin: 40px 0;
+    padding: 2px;
+    /* Градієнтна рамка */
+    background: linear-gradient(135deg, var(--accent-blue), #3a4454, var(--accent-blue));
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.future-box-inner {
+    /* ЛЕГКИЙ КОЛІР ФОНУ: Темно-синій відтінок для темної теми */
+    background: #0f141d; 
+    padding: 25px;
+    border-radius: 18px;
+}
+
+/* Центрування заголовка */
+.central-header {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.central-header h4 {
+    margin: 0 15px;
+    text-align: center;
+    color: var(--accent-blue);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Адаптивне відео */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* Текст під відео */
+.text-center {
+    text-align: center;
+}
+
+.future-box-footer {
+    margin-top: 15px;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* --- СВІТЛА ТЕМА --- */
+[data-theme="light"] .future-box-inner {
+    /* М'який блакитний відтінок для світлої теми */
+    background: #f0f7ff; 
+}
+
+[data-theme="light"] .video-future-box {
+    background: linear-gradient(135deg, #1a73e8, #cce0ff, #1a73e8);
+}
+
+[data-theme="light"] .future-box-footer {
+    color: #555;
+}
