@@ -167,7 +167,7 @@ body {
 
 /* Сайдбар */
 .sidebar {
-  width: 320px;
+  width: 400px;
   background-color: var(--bg-sidebar);
   color: var(--text-sidebar);
   height: 100vh;
@@ -327,14 +327,18 @@ body {
 
 
 
-/* --- Сучасна Картка Користувача у Меню --- */
+/* =========================================
+   ЄДИНИЙ ХАБ УПРАВЛІННЯ ORION
+   ========================================= */
+
+   /* --- Сучасна Картка Користувача у Меню --- */
 .sidebar-user-card {
   background: linear-gradient(145deg, #2c3e50, #1a252f);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 12px 15px;
   margin: 15px; /* Відступи від країв меню */
-  margin-bottom: 25px; /* Відступ до списку уроків */
+  margin-bottom: 5px; /* Відступ до списку уроків */
   display: flex;
   align-items: center;
   gap: 12px;
@@ -376,12 +380,14 @@ body {
 }
 
 .user-role {
-  font-size: 10px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: #8e9bb0;
   letter-spacing: 0.5px;
   margin-bottom: 2px;
 }
+
+
 
 #user-display {
   color: #ffffff;
@@ -391,6 +397,56 @@ body {
   overflow: hidden;
   text-overflow: ellipsis; /* Додає "..." якщо ім'я задовге */
 }
+
+
+
+/* Рядок з даними */
+.info-row {
+    display: flex;
+    align-items: baseline; /* Вирівнювання по нижній лінії тексту */
+    gap: 6px;              /* Відступ між написом та ім'ям */
+    margin-bottom: 4px;
+    white-space: nowrap;   /* Заборона переносу на новий рядок */
+}
+
+/* Напис (Label) */
+.info-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Значення (Ім'я/Статус) */
+.user-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Колірне виділення */
+.name-highlight {
+    color: #ffffff;
+}
+
+.rank-highlight {
+    color: #00f2ff;
+    text-shadow: 0 0 5px rgba(0, 242, 255, 0.3);
+}
+
+/* Корекція контейнера деталей */
+.user-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+
+
 
 /* Кнопка виходу з іконкою */
 #switch-user-btn {
@@ -414,6 +470,200 @@ body {
   width: 18px;
   height: 18px;
 }
+
+
+.commander-details {
+    flex-grow: 1;
+}
+
+.name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* 1. Головний контейнер */
+
+.orion-control-hub {
+    background: var(--bg-card, rgba(10, 15, 25, 0.6));
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    border-radius: 12px;
+    padding: clamp(12px, 3vw, 20px);
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.05);
+margin: 10px;
+  }
+
+/* 2. Верхня панель (Ранг та Відсоток) */
+.hub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 12px;
+}
+
+.commander-info .label {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    color: var(--text-sidebar, #8b9bb4);
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.rank-value {
+    font-weight: bold;
+    color: var(--accent-blue, #00f2ff);
+    text-shadow: 0 0 8px rgba(191, 19, 214, 0.4);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#progress-percent-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+/* Якщо ранг містить слово "Капітан" (Золотий колір) */
+.rank-value.gold-rank {
+    color: #ffca28 !important;
+    text-shadow: 0 0 15px rgba(255, 202, 40, 0.7) !important;
+    animation: rank-glow 2s infinite alternate;
+}
+
+@keyframes rank-glow {
+    from { opacity: 0.8; }
+    to { opacity: 1; text-shadow: 0 0 20px rgba(255, 202, 40, 1); }
+}
+
+/* 3. Головна багатосегментна шкала збірки */
+.ship-assembly-track {
+    display: flex;
+    width: 100%;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-segment {
+    height: 100%;
+    width: 0; /* Стартове значення */
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Кольори та неонове світіння для модулів */
+.html-glow { background: linear-gradient(90deg, #e67e22, #d35400); box-shadow: 0 0 10px rgba(230, 126, 34, 0.5); }
+.css-glow  { background: linear-gradient(90deg, #3498db, #2980b9); box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); }
+.js-glow   { background: linear-gradient(90deg, #f1c40f, #f39c12); box-shadow: 0 0 10px rgba(241, 196, 15, 0.5); }
+
+
+
+
+/* 4. Нижня панель (Статистика та Легенда) */
+.hub-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.lesson-counter {
+    font-size: 0.85rem;
+    color: var(--text-sidebar, #8b9bb4);
+    opacity: 0.8;
+}
+
+/* Легенда модулів */
+.module-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    color: #c9d1d9;
+    white-space: nowrap;
+}
+
+.legend-item b {
+    color: #ffffff; /* Відсотки виділені білим */
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dot.html { background: #e67e22; }
+.dot.css  { background: #3498db; }
+.dot.js   { background: #f1c40f; }
+
+
+
+/* =========================================
+   АДАПТИВНІСТЬ (Media Queries)
+   ========================================= */
+
+/* Планшети (до 768px) */
+@media (max-width: 768px) {
+    .hub-footer {
+        flex-direction: column; /* Статистика і легенда стають одне під одним */
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* Смартфони (до 480px) */
+@media (max-width: 480px) {
+    .orion-control-hub {
+        padding: 12px;
+    }
+
+    .module-legend {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .legend-item {
+        justify-content: space-between; /* Назва модуля зліва, відсотки справа */
+        width: 100%;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Розділювач */
+    }
+
+    .legend-item:last-child {
+        border-bottom: none;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .hub-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
 
 
 /* Основна частина та контент */
@@ -446,6 +696,85 @@ body {
     transform: translateY(0);
   }
 }
+
+
+.section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.3), transparent);
+    margin: 25px 0;
+}
+
+.tech-list li, .grid-theory li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+.tech-list code, .grid-theory code {
+    color: #e67e22; /* Колір HTML за нашою легендою */
+    background: rgba(0,0,0,0.3);
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Порівняння div та span */
+.comparison-box {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.comp-item {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #3498db;
+}
+
+/* Семантична карта */
+.semantic-map {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.map-item {
+    background: rgba(0, 242, 255, 0.05);
+    padding: 12px;
+    border: 1px dashed rgba(0, 242, 255, 0.3);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.map-item strong {
+    color: #00f2ff;
+    margin-right: 10px;
+    font-family: monospace;
+}
+
+/* Практичні рівні */
+.level-task {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.level-task.highlight {
+    border: 1px solid #f1c40f;
+    box-shadow: 0 0 10px rgba(241, 196, 15, 0.1);
+}
+
+.level-task strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #f1c40f;
+}
+
+
+
 
 /* Типографіка контенту */
 
@@ -492,6 +821,7 @@ pre code {
 .practice-card h3 {
   margin-top: 0;
 }
+
 .practice-card code {
   color: #333;
   background: #fff;
@@ -527,91 +857,6 @@ pre code {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(142, 68, 173, 0.6);
   background: linear-gradient(135deg, #9b59b6, #3498db);
-}
-
-/* --- Прогрес-бар --- */
-/* Контейнер для всього блоку прогресу в сайдбарі */
-.sidebar-progress-section {
-  padding: 0 20px;
-  margin-bottom: 25px;
-}
-
-/* Рядок з написом та відсотками */
-.progress-labels {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.progress-title {
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text-sidebar);
-  opacity: 0.8;
-}
-
-#progress-percent-text {
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--accent);
-}
-
-/* "Рейка" прогрес-бару */
-.progress-container-sidebar {
-  width: 100%;
-  height: 12px;
-  background: rgba(0, 0, 0, 0.2); /* Темна основа */
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Сама заповнена частина */
-.progress-bar-fill {
-  height: 100%;
-  width: 0%; /* Керується через JS */
-  background: linear-gradient(90deg, #00b09b, #96c93d);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 176, 155, 0.4);
-  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Корекція для темної теми */
-[data-theme="dark"] .progress-container-sidebar {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.progress-stats-text {
-  font-size: 14px;
-  color: var(--text-sidebar);
-  opacity: 0.7;
-  margin-top: 8px;
- font-weight: 500;
-}
-
-.progress-stats-text {
-    margin-top: 10px;
-    font-size: 0.8rem;
-    line-height: 1.5;
-}
-
-.user-rank {
-    color: var(--accent-blue); /* Твій основний синій колір */
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-    font-size: 0.75rem;
-    transition: all 0.3s ease;
-}
-
-/* Якщо курс пройдено на 100% - ранг "горить" золотим */
-.user-rank:contains("Капітан") {
-    color: #ffca28;
-    text-shadow: 0 0 10px rgba(255, 202, 40, 0.4);
 }
 
 
@@ -796,16 +1041,34 @@ code[class*="language-"] {
 }
 
 /* --- СТИЛІ ЦЕНТРУ МОДЕРНІЗАЦІЇ --- */
-/* Загальні стилі карток (для обох тем) */
+/* ГОЛОВНИЙ КОНТЕЙНЕР ДЛЯ КАРТОК */
+.milestone-grid {
+    display: grid;    /* Створюємо 2 колонки однакової ширини */
+    grid-template-columns: repeat(2, 1fr);     /* Відступ між колонками та рядами */
+    gap: 25px;     /* Щоб сітка займала всю ширину */
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* 2. Оновлюємо стилі карток, щоб вони слухалися сітки */
 .milestone-card {
     border-radius: 12px;
     padding: 25px;
     transition: all 0.3s ease;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 25px; /* Відступ між картками */
+    flex-direction: column;    /* ПРИБИРАЄМО ЦЕ, щоб не ламалася сітка: */
+    margin-bottom: 0 !important; 
     border: 1px solid transparent;
+    height: 100%; /* Картки будуть однакової висоти в ряду */
 }
+
+/* 3. Адаптація для телефонів: якщо екран вузький, картки стануть одна під одну */
+@media (max-width: 850px) {
+    .milestone-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* СВІТЛА ТЕМА (Default / data-theme="light") */
 body[data-theme="light"] .milestone-card {
@@ -868,7 +1131,7 @@ body[data-theme="dark"] .task-list .checkbox-label:hover {
     background: #1c2128;
 }
 
-/* --- НОВА ВІЗУАЛІЗАЦІЯ КОРАБЛЯ ORION (CSS) --- */
+/* ---ВІЗУАЛІЗАЦІЯ КОРАБЛЯ ORION (CSS) --- */
 
 .ship-visualizer-container {
     background: #0d1117;
@@ -1202,6 +1465,30 @@ body[data-theme="dark"] .task-list .checkbox-label:hover {
     opacity: 0.8;
 }
 
+
+/* Сітка для подвійних відео-блоків */
+.video-dual-grid {
+    display: grid;
+    /* Розділяємо на 2 рівні частини */
+    grid-template-columns: 1fr 1fr;
+    /* Відступ між блоками */
+    gap: 25px;
+    margin: 30px 0;
+}
+
+/* Налаштування самих блоків, щоб вони не розтягувалися занадто сильно */
+.video-future-box {
+    width: 100%;
+    margin-bottom: 0 !important; /* Прибираємо нижній марджин, бо є gap */
+}
+
+/* Адаптивність: на смартфонах відео стають одне під одним */
+@media (max-width: 950px) {
+    .video-dual-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- СВІТЛА ТЕМА --- */
 [data-theme="light"] .future-box-inner {
     /* М'який блакитний відтінок для світлої теми */
@@ -1215,3 +1502,11 @@ body[data-theme="dark"] .task-list .checkbox-label:hover {
 [data-theme="light"] .future-box-footer {
     color: #555;
 }
+
+
+
+
+
+
+
+

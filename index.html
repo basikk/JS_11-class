@@ -34,16 +34,20 @@
 
     <nav class="sidebar">
       <div class="sidebar-header">
-        <h2>JS Курс: 11 Клас 🚀</h2>
+        <h2>JS Курс: Проєкт "ORION 🚀</h2>
       </div>
 
       <div class="sidebar-user-card">
-        <div class="user-avatar">👨‍💻</div>
+        <div class="user-avatar">👨</div>
         <div class="user-info">
-          <span class="user-role">Студент курсу</span>
+          <span class="user-role">ІМ'Я КОМАНДИРА</span>
           <span id="user-display">Завантаження...</span>
+          <span class="user-role">СТАТУС:</span>
+          <span id="progress-rank" class="rank-value"></span>
+        
+
         </div>
-        <button id="switch-user-btn" title="Вийти з профілю">
+        <button id="switch-user-btn" title="Покинути місток">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -58,29 +62,45 @@
             <line x1="21" y1="12" x2="9" y2="12"></line>
           </svg>
         </button>
+
+        
       </div>
 
-<div class="sidebar-progress-section">
-  <div class="progress-labels">
-    <span class="progress-title">Прогрес курсу</span>
-    <span id="progress-percent-text">0%</span>
-  </div>
-  
-   <div class="progress-container-sidebar">
-    <div class="progress-bar-fill" id="sidebar-progress-fill"></div>
-  </div>
-  
-  <div id="progress-stats-text" class="progress-stats-text">
-    Завантаження...
-  </div>
+<div class="orion-control-hub">
+    <div class="hub-header">
+        <div class="commander-info">
+            <span class="label">Готовність крейсера</span>
+                        
+          </div>
+        <div class="total-status">
+            <span id="progress-percent-text" class="percent-value">0%</span>
+        </div>
+    </div>
+
+    <div class="ship-assembly-track">
+        <div class="progress-segment html-glow" id="bar-html" style="width: 0%;"></div>
+        <div class="progress-segment css-glow" id="bar-css" style="width: 0%;"></div>
+        <div class="progress-segment js-glow" id="bar-js" style="width: 0%;"></div>
+    </div>
+
+    <div class="hub-footer">
+        <div class="lesson-counter">
+            <i class="icon-rocket"></i> 
+            <span id="progress-stats-text">0 з 0 етапів збірки</span>
+        </div>
+        
+        <div class="module-legend">
+            <span class="legend-item"><span class="dot html"></span> HTML: <b id="text-html">0%</b></span>
+            <span class="legend-item"><span class="dot css"></span> CSS: <b id="text-css">0%</b></span>
+            <span class="legend-item"><span class="dot js"></span> JavaScript: <b id="text-js">0%</b></span>
+        </div>
+    </div>
 </div>
 
-
-
-      <div class="menu-container">
+<!--   <div class="menu-container">
         <div class="menu-block">
           <button class="block-toggle active">
-            JS 1. Основи JavaScript
+            JS1. Основи JavaScript
             <span class="arrow">▼</span>
           </button>
           <ul class="block-list open">
@@ -91,7 +111,7 @@
             </li>
             <li>
               <a href="#" class="nav-link" data-target="l-02">
-                02. Змінні та типи
+                02. Змінні та типи даних
               </a>
             </li>
             <li>
@@ -119,7 +139,7 @@
 
         <div class="menu-block">
           <button class="block-toggle">
-            JS2. Основи роботи з даними
+            JS2. Робота з даними
             <span class="arrow">▶</span>
           </button>
           <ul class="block-list">
@@ -134,7 +154,9 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link" data-target="l-08">08. Об’єкти</a>
+              <a href="#" class="nav-link" data-target="l-08">
+                08. Об’єкти
+              </a>
             </li>
             <li>
               <a href="#" class="nav-link" data-target="l-09">
@@ -151,7 +173,7 @@
 
         <div class="menu-block">
           <button class="block-toggle">
-            JS 3. Використання DOM
+            JS3. Використання DOM
             <span class="arrow">▶</span>
           </button>
 
@@ -191,7 +213,7 @@
 
         <div class="menu-block">
           <button class="block-toggle">
-            JS 4. Опрацювання форм
+            JS4. Опрацювання форм у JS
             <span class="arrow">▶</span>
           </button>
 
@@ -241,6 +263,110 @@
           </a>
         </div>
       </div>
+ -->
+
+<div class="menu-container">
+  
+  <div class="menu-block">
+    <hr>
+    <button class="block-toggle">
+      ⚡ HTML I: Каркас крейсера
+      <span class="arrow">▶</span>
+    </button>
+    <ul class="block-list  open">
+      <li><a href="#" class="nav-link" data-target="h-01">01. Запуск: Базова структура документа</a></li>
+      <li><a href="#" class="nav-link" data-target="h-02">02. Відсіки: Семантика та контейнери (div, section)</a></li>
+      <li><a href="#" class="nav-link" data-target="h-03">03. Навігація: Посилання та списки (a, ul, li)</a></li>
+      <li><a href="#" class="nav-link" data-target="h-04">04. Бортові журнали та Таблиці даних (table, tr, td)</a></li>
+      <li><a href="#" class="nav-link" data-target="h-05">05. Візуалізація: Робота з медіа (img, alt)</a></li>
+      <li><a href="#" class="nav-link" data-target="h-06">06. Командний центр: Форми та кнопки (input, button)</a></li>
+      <li><a href="#" class="nav-link practice" data-target="p-h01">Практична №01: "Креслення палуби Orion"</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-block">
+    <button class="block-toggle">
+      ⚡ CSS II: Обшивка та енергоброня
+      <span class="arrow">▶</span>
+    </button>
+    <ul class="block-list">
+      <li><a href="#" class="nav-link" data-target="c-01">01. Енергія: Селектори, кольори та шрифти</a></li>
+      <li><a href="#" class="nav-link" data-target="c-02">02. Оболонка: Блокова модель </a></li>
+      <li><a href="#" class="nav-link" data-target="c-03">03. Розподіл: Гнучка верстка (Flexbox)</a></li>
+      <li><a href="#" class="nav-link" data-target="c-04">04. Дизайн: Тіні, градієнти та закруглення</a></li>
+      <li><a href="#" class="nav-link" data-target="c-05">05. Реактивність: Ховер-ефекти та переходи (transition)</a></li>
+      <li><a href="#" class="nav-link" data-target="c-06">06. Оживлення систем — :hover та Transition</a></li>
+      <li><a href="#" class="nav-link" data-target="c-07">07. Автономні системи та Класи-стани</a></li>
+      
+      <li><a href="#" class="nav-link practice" data-target="p-c01">Практична №02: "Активація візуальних систем"</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-block">
+    <button class="block-toggle active">
+       ⚡JS III: Базова логіка
+      <span class="arrow">▼</span>
+    </button>
+    <ul class="block-list">
+      <li><a href="#" class="nav-link" data-target="l-01">01. Ініціалізація: Вступ до JavaScript</a></li>
+      <li><a href="#" class="nav-link" data-target="l-02">02. Змінні та типи даних</a></li>
+      <li><a href="#" class="nav-link" data-target="l-03">03. Навігаційні розгалуження: Умовні оператори</a></li>
+      <li><a href="#" class="nav-link" data-target="l-04">04. Використаннея циклів. Цикли for, while</a></li>
+      <li><a href="#" class="nav-link" data-target="l-05">05. Командні блоки: Вступ до функції</a></li>
+      <li><a href="#" class="nav-link practice" data-target="p-01">Практична №03: "Перший контакт"</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-block">
+    <button class="block-toggle">
+      ⚡JS ІV: Зберігання даних
+      <span class="arrow">▶</span>
+    </button>
+    <ul class="block-list">
+      <li><a href="#" class="nav-link" data-target="l-06">06. Основи масивів</a></li>
+      <li><a href="#" class="nav-link" data-target="l-07">07. Сортування ресурсів: Методи масивів</a></li>
+      <li><a href="#" class="nav-link" data-target="l-08">08. Технічні характеристики: Об’єкти</a></li>
+      <li><a href="#" class="nav-link" data-target="l-09">09. Симуляція місій: Прикладні задачі</a></li>
+      <li><a href="#" class="nav-link practice" data-target="p-02">Практична №04: "Інвентаризація флоту"</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-block">
+    <button class="block-toggle">
+      ⚡JS V: Сенсорні системи
+      <span class="arrow">▶</span>
+    </button>
+    <ul class="block-list">
+      <li><a href="#" class="nav-link" data-target="l-10">10. Підключення до терміналів: Пошук елементів у DOM</a></li>
+      <li><a href="#" class="nav-link" data-target="l-11">11. Індикатори живлення: Керування стилями та шкалами</a></li>
+      <li><a href="#" class="nav-link" data-target="l-12">12. Реакція на команди: Події та реакція на кліки</a></li>
+      <li><a href="#" class="nav-link" data-target="l-13">13. Модульна збірка: Динамічне створення елементів</a></li>
+      <li><a href="#" class="nav-link" data-target="l-14">14. Космічні стани: Маніпуляції з класами (classList)</a></li>
+      <li><a href="#" class="nav-link practice" data-target="p-03">Практична №05: "Візуалізація капітанського містка"</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-block">
+    <button class="block-toggle">
+      ⚡JS VI: Командний центр
+      <span class="arrow">▶</span>
+    </button>
+    <ul class="block-list">
+      <li><a href="#" class="nav-link" data-target="l-15">15. Термінал вводу: Основи форм</a></li>
+      <li><a href="#" class="nav-link" data-target="l-16">16. Запуск систем: Подія submit</a></li>
+      <li><a href="#" class="nav-link" data-target="l-17">17. Калібрування щитів: Вибір ресурсів (select/checkbox)</a></li>
+      <li><a href="#" class="nav-link" data-target="l-18">18. Системи безпеки: Валідація та помилки</a></li>
+      <li><a href="#" class="nav-link" data-target="l-19">19. Бортові сповіщення: Фідбек та сповіщення</a></li>
+      <li><a href="#" class="nav-link practice" data-target="p-04">Практична №06: "Командний центр"</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-block special-project-block">
+    <a href="#" class="nav-link spaceship-link" data-target="project-hub">
+      🚀 Проєкт: Корабель ORION
+    </a>
+  </div>
+</div>      
     </nav>
 
     <main class="content">
@@ -324,7 +450,1516 @@
         </div>
       </section>
 
-      <section id="l-01" class="lesson-section">
+    <section id="h-01" class="lesson-section module-html" >
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Силовий каркас</span>
+        <h1>Урок 1: Основи HTML — Проєктування корпусу</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Вітаємо на верфі, Командире! Будь-який космічний крейсер починається з креслення. У веб-розробці таким кресленням і одночасно <strong>силовим каркасом</strong> виступає <strong>HTML</strong> (HyperText Markup Language — мова гіпертекстової розмітки).</p>
+        
+        <hr class="section-divider">
+
+        <h3>1. Базова структура документа (Фундамент корабля)</h3>
+        <p>Кожен сайт має стандартну структуру блоків, як і відсіки нашого корабля. Без них система не запуститься.</p>
+        
+        <div class="theory-box">
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Термінал Orion&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Тут розміщується екіпаж та обладнання --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        
+        <ul class="tech-list">
+            <li><code>&lt;!DOCTYPE html&gt;</code> — Системний протокол. Повідомляє браузеру, що ми будуємо за сучасними стандартами HTML5.</li>
+            <li><code>&lt;html&gt;</code> — Зовнішня титанова обшивка. Цей тег обгортає абсолютно весь код на сторінці.</li>
+            <li><code>&lt;head&gt;</code> — Бортовий комп'ютер. Містить технічні дані (назву вкладки <code>&lt;title&gt;</code>, шрифти), які приховані від очей пасажирів.</li>
+            <li><code>&lt;body&gt;</code> — Житлові відсіки. Усе, що написано всередині цього тегу, відобразиться на екрані монітора.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>2. Робота з текстом (Бортові записи)</h3>
+        <p>Щоб вивести інформацію на екран, нам потрібні текстові теги. Основні з них — це заголовки та параграфи.</p>
+
+        <h4>Заголовки (Рівні доступу)</h4>
+        <p>В HTML існує 6 рівнів заголовків: від <code>&lt;h1&gt;</code> (найбільший та найважливіший) до <code>&lt;h6&gt;</code> (найменший). Правило: на одній сторінці має бути лише один <code>&lt;h1&gt;</code> — це головна назва!</p>
+        
+        <div class="theory-box">
+            <pre><code class="language-html">&lt;h1&gt;Крейсер Orion&lt;/h1&gt;
+&lt;h2&gt;Відсік двигунів&lt;/h2&gt;
+&lt;h3&gt;Панель управління тягою&lt;/h3&gt;</code></pre>
+        </div>
+
+        <h4>Параграфи (Стандартні повідомлення)</h4>
+        <p>Для звичайного тексту, описів та статей використовується тег <code>&lt;p&gt;</code> (від слова paragraph). Він автоматично робить відступи зверху та знизу.</p>
+        
+        <div class="theory-box">
+            <pre><code class="language-html">&lt;p&gt;Системи життєзабезпечення працюють у штатному режимі.&lt;/p&gt;
+&lt;p&gt;Рівень кисню: 98%.&lt;/p&gt;</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>3. Форматування тексту (Модифікатори даних)</h3>
+        <p>Іноді в бортовому журналі потрібно виділити критичну помилку або зробити акцент. Для цього є спеціальні теги, які пишуться <i>всередині</i> параграфів.</p>
+
+        <div class="grid-theory">
+            <ul>
+                <li><code>&lt;strong&gt;</code> або <code>&lt;b&gt;</code> — Робить текст <b>жирним</b> (виділення важливого).</li>
+                <li><code>&lt;em&gt;</code> або <code>&lt;i&gt;</code> — Робить текст <i>курсивним</i> (акцент голосом).</li>
+                <li><code>&lt;u&gt;</code> — <u>Підкреслений</u> текст.</li>
+                <li><code>&lt;s&gt;</code> або <code>&lt;del&gt;</code> — <s>Перекреслений</s> текст (старі дані).</li>
+                <li><code>&lt;br&gt;</code> — Примусовий розрив рядка (як Enter). Не має закриваючого тегу!</li>
+                <li><code>&lt;hr&gt;</code> — Горизонтальна лінія. Візуальний розділювач відсіків.</li>
+            </ul>
+        </div>
+
+        <div class="theory-box">
+            <pre><code class="language-html">&lt;p&gt;Увага! Виявлено &lt;strong&gt;критичну поломку&lt;/strong&gt; корпусу.&lt;br&gt;
+Прохання екіпажу &lt;s&gt;панікувати&lt;/s&gt; зберігати &lt;u&gt;спокій&lt;/u&gt;.&lt;/p&gt;
+&lt;hr&gt;</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+    <h4>🛠 Практикум: "Протокол ініціалізації"</h4>
+    <p>Виконайте завдання, щоб закласти фундамент вашого крейсера:</p>
+    
+    <div class="level-task">
+        <strong>Рівень 1: Корпус (Structure)</strong>
+        <p>Створіть базовий файл. Напишіть назву корабля у вкладці (<code>&lt;title&gt;</code>) та головний заголовок <code>&lt;h1&gt;</code> у тілі документа.</p>
+    </div>
+
+    <div class="level-task">
+        <strong>Рівень 2: Бортовий журнал (Text)</strong>
+        <p>Додайте підзаголовок <code>&lt;h2&gt;</code> "Опис місії" та два параграфи <code>&lt;p&gt;</code> з історією вашої подорожі до сузір'я Оріон.</p>
+    </div>
+
+    <div class="level-task highlight">
+        <strong>Рівень 3: Акценти (Formatting)</strong>
+        <p>У тексті бортового журналу виділіть <strong>жирним</strong> назву вашого екіпажу, <i>курсивом</i> — назву двигуна, та використайте <code>&lt;hr&gt;</code>, щоб відокремити опис місії від підпису капітана.</p>
+    </div>
+</div>
+
+
+    </div>
+
+        <button class="complete-btn" data-lesson="h-01">
+          ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+    </section>
+
+    <section  id="h-02" class="lesson-section module-html">
+
+      <div class="lesson-header">
+          <span class="lesson-category">Модуль: Силовий каркас</span>
+          <h1>Урок 2: Відсіки корабля — Containers & Semantics</h1>
+      </div>
+
+      <div class="lesson-content">
+          <p>На першому етапі ми створили основу. Тепер час розділити внутрішній простір крейсера на функціональні зони. Без чіткого планування екіпаж заблукає, а бортовий комп'ютер (браузер) не зрозуміє, де знаходиться місток, а де — паливний склад.</p>
+
+          <hr class="section-divider">
+
+          <h3>1. Універсальні блоки: &lt;div&gt; та &lt;span&gt;</h3>
+          <p>Це "пусті" контейнери, які ми використовуємо для групування елементів. Самі по собі вони не мають стилю, але вони — незамінні інструменти інженера.</p>
+
+          <div class="comparison-box">
+              <div class="comp-item">
+                  <h4>&lt;div&gt; (Блок-відсік)</h4>
+                  <p>Це велика кімната. Він займає <strong>всю ширину</strong> доступного простору і завжди починається з нового рядка.</p>
+                  <code>&lt;div&gt;Відсік двигуна&lt;/div&gt;</code>
+              </div>
+              <div class="comp-item">
+                  <h4>&lt;span&gt; (Деталь/Індикатор)</h4>
+                  <p>Це маленька деталь всередині кімнати. Він займає рівно стільки місця, скільки потрібно, і <strong>не перериває</strong> рядок.</p>
+                  <code>&lt;span&gt;Датчик тиску&lt;/span&gt;</code>
+              </div>
+          </div>
+
+          <hr class="section-divider">
+
+          <h3>2. Семантика: Навігаційна карта корабля</h3>
+          <p>Раніше інженери будували все лише з <code>&lt;div&gt;</code>. Це було схоже на корабель, де на кожних дверях написано просто "Кімната". Семантичні теги дають кожній зоні унікальне ім'я, зрозуміле для пошукових систем та систем доступності.</p>
+
+          <div class="semantic-map">
+              <div class="map-item">
+                  <strong>&lt;header&gt;</strong> — Капітанський місток. Тут логотип, назва корабля та головне меню.
+              </div>
+              <div class="map-item">
+                  <strong>&lt;nav&gt;</strong> — Система навігації. Список посилань для переміщення між палубами.
+              </div>
+              <div class="map-item">
+                  <strong>&lt;main&gt;</strong> — Головна палуба. Тут розміщується основний унікальний контент уроку чи сторінки.
+              </div>
+              <div class="map-item">
+                  <strong>&lt;section&gt;</strong> — Спеціалізований цех. Групує пов'язаний за темою контент (наприклад, "Технічні характеристики").
+              </div>
+              <div class="map-item">
+                  <strong>&lt;footer&gt;</strong> — Технічний трюм. Контактна інформація, копірайт та посилання на соцмережі флоту.
+              </div>
+          </div>
+
+          <div class="theory-box">
+              <h4>Приклад семантичної архітектури:</h4>
+              <pre><code class="language-html">&lt;header&gt;
+      &lt;img src="logo.png" alt="Orion Logo"&gt;
+      &lt;nav&gt;Посилання на палуби&lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+      &lt;section&gt;
+          &lt;h2&gt;Стан реактора&lt;/h2&gt;
+          &lt;p&gt;Реактор працює стабільно.&lt;/p&gt;
+      &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+      &lt;p&gt;&amp;copy; 2124 Orion Fleet Academy&lt;/p&gt;
+  &lt;/footer&gt;</code></pre>
+          </div>
+
+          <hr class="section-divider">
+
+          <div class="practice-card">
+              <h4>🛠 Практикум: "Проєктування Крейсера"</h4>
+              <p>Виконайте завдання за рівнями складності, щоб отримати допуск до наступного модуля:</p>
+              
+              <div class="level-task">
+                  <strong>Рівень 1: Локальні системи (div/span)</strong>
+                  <p>Створіть <code>&lt;div&gt;</code> з описом зброї. Всередині тексту назву зброї обгорніть у <code>&lt;span&gt;</code> і додайте йому колір (через атрибут style або просто запам'ятайте, де він).</p>
+              </div>
+
+              <div class="level-task">
+                  <strong>Рівень 2: Архітектура (Semantics)</strong>
+                  <p>Побудуйте структуру сторінки вашого корабля, використавши <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> та <code>&lt;footer&gt;</code>. У "футері" напишіть рік випуску крейсера.</p>
+              </div>
+
+              <div class="level-task highlight">
+                  <strong>Рівень 3: Майстер-інженер (Повна збірка)</strong>
+                  <p>Створіть макет, де всередині <code>&lt;main&gt;</code> буде дві <code>&lt;section&gt;</code>: "Екіпаж" та "Озброєння". В кожній секції використайте заголовки та списки. Перевірте, щоб <code>&lt;nav&gt;</code> знаходився всередині <code>&lt;header&gt;</code>.</p>
+              </div>
+          </div>
+      </div>
+
+          <button class="complete-btn" data-lesson="h-02">
+            ✅ Відмітити як пройдений
+          </button>
+          <div class="lesson-navigation">
+            <button class="nav-btn prev-btn">← Попередній урок</button>
+            <button class="nav-btn next-btn">Наступний урок →</button>
+          </div>
+    </section>
+
+    <section id="h-03" class="lesson-section module-html">
+        <div class="lesson-header">
+            <span class="lesson-category">Модуль: Силовий каркас</span>
+            <h1>Урок 3: Навігаційні системи</h1>
+        </div>
+
+        <div class="lesson-content">
+            <p>Для керування складним крейсером нам потрібні чіткі переліки обладнання та канали зв'язку. Сьогодні ми опануємо <strong>списки</strong> для інвентаризації та <strong>посилання</strong> для міжпросторових переходів.</p>
+
+            <hr class="section-divider">
+
+            <h3>1. Списки: Інвентаризація та Протоколи</h3>
+            <p>В HTML списки дозволяють групувати пов'язані дані. Це основа для створення меню навігації та переліку характеристик корабля.</p>
+
+            <div class="comparison-box">
+                <div class="comp-item">
+                    <h4>&lt;ul&gt; (Unordered List)</h4>
+                    <p><strong>Маркований список.</strong> Використовується, коли порядок елементів не має значення (наприклад, склад запчастин).</p>
+                    <pre><code class="language-html">&lt;ul&gt;
+      &lt;li&gt;Плазмова гармата&lt;/li&gt;
+      &lt;li&gt;Щитовий генератор&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+                </div>
+                <div class="comp-item">
+                    <h4>&lt;ol&gt; (Ordered List)</h4>
+                    <p><strong>Нумерований список.</strong> Ідеальний для покрокових інструкцій та алгоритмів запуску систем.</p>
+                    <pre><code class="language-html">&lt;ol&gt;
+      &lt;li&gt;Розігрів реактора&lt;/li&gt;
+      &lt;li&gt;Перевірка палива&lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+                </div>
+            </div>
+            
+            
+
+            <p>Кожен окремий пункт списку обов'язково загортається в тег <code>&lt;li&gt;</code> (List Item).</p>
+
+            <hr class="section-divider">
+
+            <h3>2. Гіперпосилання: Гіперпросторові стрибки</h3>
+            <p>Тег <code>&lt;a&gt;</code> (anchor — якір) створює зв'язок між сторінками. Це "портал", який миттєво переносить користувача в іншу локацію.</p>
+
+            <div class="theory-box">
+                <h4>Анатомія посилання:</h4>
+                <pre><code class="language-html">&lt;a href="https://fleet-academy.com" target="_blank"&gt;База флоту&lt;/a&gt;</code></pre>
+                <ul class="tech-list">
+                    <li><code>href</code> — (Hypertext Reference) Координати цілі. Це адреса сторінки, куди веде посилання.</li>
+                    <li><code>target="_blank"</code> — Команда відкрити портал у новому вікні (терміналі), не закриваючи поточний.</li>
+                    <li><strong>Текст посилання</strong> — Те, на що пілот натискає в інтерфейсі.</li>
+                </ul>
+            </div>
+
+            
+
+            <hr class="section-divider">
+
+            <div class="practice-card">
+                <h4>🛠 Практикум: "Налаштування зв'язку"</h4>
+                <p>Протестуйте навігаційні модулі вашого відсіку:</p>
+                
+                <div class="level-task">
+                    <strong>Рівень 1: Список екіпажу</strong>
+                    <p>Створіть маркований список (<code>&lt;ul&gt;</code>), де перелічіть 3 посади на містку (наприклад: Капітан, Навігатор, Бортінженер).</p>
+                </div>
+
+                <div class="level-task">
+                    <strong>Рівень 2: Протокол гіперстрибка</strong>
+                    <p>Створіть нумерований список (<code>&lt;ol&gt;</code>) з трьох дій для переходу в надсвітлову швидкість. Другим пунктом зробіть посилання (<code>&lt;a&gt;</code>) на Google з текстом "Звірити карти".</p>
+                </div>
+
+                <div class="level-task highlight">
+                    <strong>Рівень 3: Глобальна мережа</strong>
+                    <p>Створіть посилання на офіційний сайт NASA. Зробіть так, щоб воно відкривалося в новій вкладці. Обгоніть це посилання в <code>&lt;p&gt;</code> та додайте перед ним <code>&lt;strong&gt;УВАГА:&lt;/strong&gt;</code>.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="complete-btn" data-lesson="h-03">
+            ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+            <button class="nav-btn prev-btn" onclick="switchLesson('h-02')">← Попередній урок</button>
+            <button class="nav-btn next-btn" onclick="switchLesson('h-04')">Наступний урок →</button>
+        </div>
+    </section>
+
+    <section id="h-04" class="lesson-section module-html">
+        <div class="lesson-header">
+            <span class="lesson-category">Модуль: Силовий каркас</span>
+            <h1>Урок 4: Бортові журнали та Таблиці даних</h1>
+        </div>
+
+        <div class="lesson-content">
+            <p>Для керування космічним флотом недостатньо простого тексту. Нам потрібні матриці даних. В HTML для цього використовуються <strong>таблиці</strong>, які дозволяють впорядкувати інформацію по рядках та стовпчиках.</p>
+
+            <hr class="section-divider">
+
+            <h3>1. Анатомія таблиці: Основні вузли</h3>
+            <p>Таблиця будується за принципом вкладеності. Уявіть це як сітку енергоблоків, де кожен елемент має своє чітке місце.</p>
+
+            <ul class="tech-list">
+                <li>&lt;table&gt; — Головний контейнер, що обгортає всю таблицю.</li>
+                <li>&lt;tr&gt; — (Table Row) Горизонтальний рядок таблиці.</li>
+                <li>&lt;th&gt; — (Table Header) Комірка заголовка. Текст у ній зазвичай жирний і центрований.</li>
+                <li>&lt;td&gt; — (Table Data) Звичайна комірка з даними.</li>
+            </ul>
+
+            <div class="theory-box">
+                <h4>Приклад простої таблиці екіпажу:</h4>
+                <pre><code class="language-html">&lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Позивний&lt;/th&gt;
+        &lt;th&gt;Статус&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Orion-1&lt;/td&gt;
+        &lt;td&gt;У польоті&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;</code></pre>
+            </div>
+
+            
+
+            <hr class="section-divider">
+
+            <h3>2. Об'єднання відсіків (colspan та rowspan)</h3>
+            <p>Іноді одна система займає кілька секторів. В таблицях ми можемо об'єднувати комірки за допомогою спеціальних атрибутів:</p>
+
+            <div class="comparison-box">
+                <div class="comp-item">
+                    <h4>colspan (Горизонтально)</h4>
+                    <p>Дозволяє одній комірці розтягнутися на кілька <strong>стовпчиків</strong>.</p>
+                    <code>&lt;td colspan="2"&gt;Загальна потужність&lt;/td&gt;</code>
+                </div>
+                <div class="comp-item">
+                    <h4>rowspan (Вертикально)</h4>
+                    <p>Дозволяє комірці розтягнутися на кілька <strong>рядків</strong>.</p>
+                    <code>&lt;td rowspan="3"&gt;Сектор А&lt;/td&gt;</code>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <h3>3. Семантика таблиць: Заголовок та Групування</h3>
+            <p>Для складних журналів ми використовуємо додаткові теги, щоб браузер розумів структуру даних:</p>
+            <ul class="tech-list">
+                <li><code>&lt;caption&gt;</code> — Назва таблиці (відображається над нею).</li>
+                <li><code>&lt;thead&gt;</code> — "Голова" таблиці (група заголовків).</li>
+                <li><code>&lt;tbody&gt;</code> — Основне "тіло" з даними.</li>
+                <li><code>&lt;tfoot&gt;</code> — "Підвал" таблиці (підсумки, фінальні розрахунки).</li>
+            </ul>
+
+            <hr class="section-divider">
+
+            <div class="practice-card">
+                <h4>🛠 Практикум: "Реєстр озброєння"</h4>
+                <p>Створіть детальну таблицю для вашого бойового відсіку:</p>
+                
+                <div class="level-task">
+                    <strong>Рівень 1: Базовий звіт</strong>
+                    <p>Створіть таблицю на 2 рядки та 2 стовпчики: "Тип зброї" та "Потужність". Заповніть один рядок даними (наприклад: Лазер — 500ТВт).</p>
+                </div>
+
+                <div class="level-task">
+                    <strong>Рівень 2: Розширений лог (th + caption)</strong>
+                    <p>Додайте до таблиці назву через <code>&lt;caption&gt;</code> та зробіть верхній рядок заголовками за допомогою <code>&lt;th&gt;</code>. Додайте третій стовпчик "Статус енергії".</p>
+                </div>
+
+                <div class="level-task highlight">
+                    <strong>Рівень 3: Майстер-архітектор (colspan)</strong>
+                    <p>Додайте в кінець таблиці додатковий рядок, де одна комірка буде об'єднана на всі три стовпчики (<code>colspan="3"</code>) з текстом "Всі системи працюють стабільно".</p>
+                </div>
+            </div>
+        </div>
+
+     <button class="complete-btn" data-lesson="h-04">
+          ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+    </section>
+
+    <section id="h-05" class="lesson-section module-html">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Силовий каркас</span>
+        <h1>Урок 5: Мультимедійні системи — Аудіо та Відео</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Для повноцінного функціонування містка Orion нам потрібні системи оповіщення та візуального моніторингу. HTML дозволяє інтегрувати медіафайли безпосередньо в інтерфейс без сторонніх плагінів.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Бортовий інтерком: Тег &lt;audio&gt;</h3>
+        <p>Використовується для відтворення звукових протоколів, сигналів тривоги або фонової атмосфери у кают-компанії.</p>
+
+        <div class="theory-box">
+            <pre><code class="language-html">&lt;audio src="alarm.mp3" controls&gt;
+  Ваш термінал не підтримує аудіосистеми.
+&lt;/audio&gt;</code></pre>
+        </div>
+
+        <ul class="tech-list">
+            <li><code>controls</code> — Додає панель керування (Play/Pause, гучність). Без цього атрибута плеєр буде невидимим.</li>
+            <li><code>autoplay</code> — Запуск відразу після завантаження (браузери часто блокують це без вимкненого звуку).</li>
+            <li><code>loop</code> — Нескінченне відтворення сигналу.</li>
+            <li><code>muted</code> — Початковий запуск без звуку.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>2. Відеоспостереження: Тег &lt;video&gt;</h3>
+        <p>Для трансляції з камер зовнішнього огляду або перегляду навчальних голограм. Працює подібно до аудіо, але має параметри відображення.</p>
+
+        <div class="theory-box">
+            <pre><code class="language-html">&lt;video src="space_view.mp4" width="600" controls poster="preview.jpg"&gt;
+  Сигнал перервано: відео не підтримується.
+&lt;/video&gt;</code></pre>
+        </div>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                <h4>Атрибут poster</h4>
+                <p>Зображення, яке пілот бачить <strong>до</strong> натискання кнопки Play. Це як заставка монітора.</p>
+            </div>
+            <div class="comp-item">
+                <h4>Атрибути width/height</h4>
+                <p>Встановлюють фізичний розмір екрана трансляції в пікселях.</p>
+            </div>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Медіа-центр Orion"</h4>
+            <p>Налаштуйте мультимедійні вузли вашого відсіку:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Звукове сповіщення</strong>
+                <p>Додайте на сторінку аудіофайл (можна використати будь-яке посилання на mp3). Обов'язково додайте панель керування через <code>controls</code>.</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Візуальний моніторинг</strong>
+                <p>Інтегруйте відеофайл. Встановіть йому ширину 400 пікселів та додайте атрибут <code>loop</code>, щоб відео повторювалося автоматично.</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Повна ініціалізація</strong>
+                <p>Створіть відео-плеєр, який має заставку (<code>poster</code>), вимкнений звук за замовчуванням (<code>muted</code>) та автоматичний запуск (<code>autoplay</code>). Під відео додайте підпис через <code>&lt;p&gt;</code>: "Камера сектору 7".</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="h-05">
+          ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+
+<section id="h-06" class="lesson-section module-html">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Силовий каркас</span>
+        <h1>Урок 6: Термінали введення — Робота з Формами</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Для двостороннього зв'язку між екіпажем та бортовим комп'ютером використовуються <strong>форми</strong>. Це спеціальні області інтерфейсу, де користувач може вводити дані, вибирати параметри та надсилати запити на сервер.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Головний термінал: Тег &lt;form&gt;</h3>
+        <p>Усі елементи введення мають бути об’єднані всередині контейнера <code>&lt;form&gt;</code>. Це як корпус пульта управління, який тримає всі кнопки та важелі разом.</p>
+
+        <div class="theory-box">
+            <pre><code class="language-html">&lt;form&gt;
+  &lt;!-- Тут розміщуються поля для введення --&gt;
+  &lt;button type="submit"&gt;Надіслати дані&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <h3>2. Поля введення та Мітки (&lt;input&gt; та &lt;label&gt;)</h3>
+        <p>Тег <code>&lt;input&gt;</code> — це універсальний модуль, тип якого залежить від атрибута <code>type</code>. Для зручності ми завжди використовуємо <code>&lt;label&gt;</code>, щоб пілот знав, що саме він вводить.</p>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                <h4>Текстові поля</h4>
+                <ul class="tech-list">
+                    <li><code>type="text"</code> — Ім'я пілота.</li>
+                    <li><code>type="email"</code> — Канал зв'язку.</li>
+                    <li><code>type="password"</code> — Код доступу (прихований).</li>
+                </ul>
+            </div>
+            <div class="comp-item">
+                <h4>Вибір параметрів</h4>
+                <ul class="tech-list">
+                    <li><code>type="checkbox"</code> — Галочка (вибір кількох опцій).</li>
+                    <li><code>type="radio"</code> — Перемикач (вибір лише однієї опції).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="theory-box">
+            <h4>Приклад зв'язки поля та мітки:</h4>
+            <pre><code class="language-html">&lt;label for="username"&gt;Позивний:&lt;/label&gt;
+&lt;input type="text" id="username" placeholder="Введіть ваш нікнейм"&gt;</code></pre>
+            <p><small>* Атрибут <code>placeholder</code> показує підказку всередині поля, доки там нічого не написано.</small></p>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Реєстрація рекрута"</h4>
+            <p>Створіть інтерфейс для збору даних нових членів екіпажу Orion:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Базовий вхід</strong>
+                <p>Створіть форму, що містить одне поле <code>&lt;input type="text"&gt;</code> для імені та кнопку <code>&lt;button&gt;</code> з текстом "Увійти".</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Безпека та Зв'язок</strong>
+                <p>Додайте до форми поля для Email та Пароля (<code>type="password"</code>). Використайте теги <code>&lt;label&gt;</code> для кожного поля.</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Повний профіль (Checkbox)</strong>
+                <p>Додайте у форму чекбокс з підписом: "Я погоджуюсь з кодексом космічного флоту". Зробіть так, щоб кнопка відправки мала атрибут <code>type="submit"</code>.</p>
+            </div>
+        </div>
+    </div>
+
+<button class="complete-btn" data-lesson="h-06">
+          ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="p-h01" class="lesson-section module-html">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Силовий каркас</span>
+        <h1>ПРАКТИКА 1: Пульт управління</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Це комплексне завдання. Ваша мета — створити повноцінну сторінку "Бортовий термінал крейсера", яка містить технічну документацію, звіти та форму реєстрації екіпажу.</p>
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🚀 Технічне завдання: Проєкт "Orion Interface"</h4>
+            <p>Виконайте завдання за рівнями доступу. Кожен наступний рівень вимагає виконання попереднього.</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Командний місток (Основи та Текст)</strong>
+                <ul>
+                    <li>Створіть семантичну структуру: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+                    <li>У <code>&lt;header&gt;</code> додайте назву корабля (h1) та навігацію <code>&lt;nav&gt;</code> з двома посиланнями (наприклад: "Стан систем" та "Екіпаж").</li>
+                    <li>У <code>&lt;main&gt;</code> створіть <code>&lt;section&gt;</code> з описом місії. Використовуйте <strong>жирний</strong> текст для статусу енергії та <i>курсив</i> для назви двигуна.</li>
+                    <li>Додайте маркований список <code>&lt;ul&gt;</code> з трьох основних цілей польоту.</li>
+                </ul>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Технічний відсік (Медіа та Таблиці)</strong>
+                <ul>
+                    <li>Додайте другу <code>&lt;section&gt;</code>, де розмістіть таблицю характеристик зброї (типу тієї, що ми вчили в Уроці 4).</li>
+                    <li>Таблиця повинна мати заголовок <code>&lt;caption&gt;</code> та шапку <code>&lt;thead&gt;</code>.</li>
+                    <li>Вбудуйте відео з "зовнішніх камер" (тег <code>&lt;video&gt;</code>). Якщо немає файлу, використайте атрибут <code>poster</code> для відображення картинки-заставки.</li>
+                    <li>Додайте аудіо-сигнал тривоги <code>&lt;audio&gt;</code> з панеллю керування.</li>
+                </ul>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Реєстрація екіпажу (Форми та Гіперпосилання)</strong>
+                <ul>
+                    <li>Створіть у <code>&lt;main&gt;</code> окремий блок <code>&lt;div&gt;</code> з формою реєстрації нового пілота.</li>
+                    <li>Форма повинна мати: поле для імені, поле для пароля, вибір спеціалізації (radio buttons: Навігатор / Інженер / Капітан) та чекбокс "Допуск до польотів".</li>
+                    <li>Додайте кнопку <code>type="submit"</code> з текстом "Зареєструвати у базі".</li>
+                    <li>У <code>&lt;footer&gt;</code> додайте підпис: "&copy; 2024 Orion Fleet Academy" та зовнішнє посилання на офіційний сайт NASA (відкривати у новій вкладці).</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="theory-box">
+            <h4>💡 Порада капітану:</h4>
+            <p>Щоб ваш код виглядав професійно, використовуйте коментарі <code>&lt;!-- Текст коментаря --&gt;</code>, щоб розділити різні системи корабля у файлі. Це допоможе іншим інженерам не заблукати у вашому крейсері.</p>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="p-h01">
+   
+          ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="c-01" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>Урок 7: Подача живлення — Знайомство з CSS</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>HTML — це структура, але без CSS наш корабель виглядає як чорно-біле креслення. CSS дозволяє нам керувати кольорами, шрифтами та розміщенням елементів, створюючи справжній космічний інтерфейс.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Підключення живлення: Як додати CSS</h3>
+        <p>Щоб "заживити" стилі, ми використовуємо тег <code>&lt;link&gt;</code> всередині блоку <code>&lt;head&gt;</code> нашої сторінки. Це створює канал зв'язку між HTML та окремим файлом зі стилями.</p>
+
+        <div class="theory-box">
+            <pre><code class="language-html">&lt;!-- Додається в &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>2. Селектори: Націлювання на системи</h3>
+        <p>Щоб стилізувати елемент, ми повинні його "вибрати". В CSS є три основні типи селекторів:</p>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                                <h4>За тегом (Tag)</h4>
+                                <p>Змінює <strong>всі</strong> елементи цього типу на кораблі.</p>
+                                <pre><code class="language-css">p {
+                  color: grey; /* Весь текст */
+                }</code></pre>
+            </div>
+            <div class="comp-item">
+                                  <h4>За класом (Class)</h4>
+                                  <p>Для групи елементів. Позначається крапкою <code>.</code></p>
+                                  <pre><code class="language-css text-blue">.btn-glow {
+                    color: cyan; /* Тільки кнопки */
+                  }</code></pre>
+            </div>
+            <div class="comp-item">
+                                    <h4>За ID (Unique)</h4>
+                                    <p>Тільки для одного об'єкта. Позначається решіткою <code>#</code></p>
+                                    <pre><code class="language-css">#main-reactor {
+                      background: red;
+                    }</code></pre>
+            </div>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <h3>3. Базова стилізація: Світло та Шрифти</h3>
+        <ul class="tech-list">
+            <li><code>color</code> — встановлює колір тексту (можна назвами: <i>white</i>, або кодами: <i>#00ff00</i>).</li>
+            <li><code>background-color</code> — колір фону відсіку.</li>
+            <li><code>font-family</code> — вибір "космічного" шрифту (наприклад, <i>Arial, sans-serif</i>).</li>
+            <li><code>font-size</code> — розмір символів на моніторі.</li>
+        </ul>
+
+        <div class="theory-box">
+            <pre><code class="language-css">body {
+  background-color: #0b0e14; /* Темний космос */
+  color: #e0e0e0;            /* Світлий текст */
+  font-family: 'Segoe UI', sans-serif;
+}</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Активація моніторів"</h4>
+            <p>Створіть файл <code>style.css</code> та підключіть його до вашої практики:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Колір космосу</strong>
+                <p>Через селектор тегу <code>body</code> змініть колір фону сторінки на темно-синій, а колір тексту — на білий.</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Акцентні системи</strong>
+                <p>Створіть у CSS клас <code>.warning</code>. Задайте йому червоний колір тексту. Додайте цей клас до будь-якого параграфа у вашому HTML.</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Унікальний місток</strong>
+                <p>Для заголовка <code>h1</code> з вашим ID (наприклад, <code>#ship-name</code>) встановіть шрифт <i>'Courier New'</i>, розмір 40px та золотистий колір (gold).</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="c-01">
+
+          ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="c-02" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>Урок 8: Бронювання та Габарити — Box Model</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Уявіть, що кожен елемент вашого крейсера — це вантажний контейнер. Щоб він не розчавив сусідні модулі та мав захисний шар, ми використовуємо чотири компоненти блокової моделі.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Анатомія блоку: Від ядра до обшивки</h3>
+        <p>Кожен елемент складається з чотирьох зон, які вкладаються одна в одну:</p>
+
+        
+
+        <ul class="tech-list">
+            <li><strong>Content (Вміст):</strong> Ядро системи. Текст, зображення або інший блок. Його розміри задаються через <code>width</code> та <code>height</code>.</li>
+            <li><strong>Padding (Внутрішній відступ):</strong> Теплоізоляція. Простір між вмістом та бронею. Він збільшує розмір блоку "всередині".</li>
+            <li><strong>Border (Межа):</strong> Бронеплита. Лінія, що оточує вміст та відступи. Має товщину, стиль та колір.</li>
+            <li><strong>Margin (Зовнішній відступ):</strong> Безпечна дистанція. Простір між цим блоком та іншими об'єктами на палубі.</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>2. Керування розмірами: Властивості</h3>
+        <p>В CSS ми можемо налаштовувати кожну сторону окремо або всі разом:</p>
+
+        <div class="theory-box">
+            <h4>Приклад налаштування модуля:</h4>
+            <pre><code class="language-css">.engine-room {
+  width: 300px;         /* Ширина ядра */
+  padding: 20px;        /* Відступ з усіх боків */
+  border: 5px solid gold; /* Товщина, тип, колір межі */
+  margin: 50px;         /* Дистанція до інших модулів */
+}</code></pre>
+        </div>
+
+        <p><strong>Скорочений запис (Shorthand):</strong></p>
+        <p>Замість того, щоб писати <code>margin-top</code>, <code>margin-right</code> і т.д., можна використати правило "годинникової стрілки" (Верх -> Право -> Низ -> Ліво):</p>
+        <div class="theory-box">
+            <pre><code class="language-css">padding: 10px 20px 15px 5px; /* Вказано всі сторони окремо */
+margin: 20px auto;           /* Верх/Низ: 20px, Право/Ліво: по центру */</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>3. Головна проблема інженерів: box-sizing</h3>
+        <p>За замовчуванням браузер додає <code>padding</code> та <code>border</code> до заданої ширини. Тобто блок 100px з падінгом 20px стане шириною 140px. Це може зруйнувати корпус корабля!</p>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                <h4>content-box (Стандарт)</h4>
+                <p>Розмір збільшується. Важко розраховувати габарити.</p>
+            </div>
+            <div class="comp-item">
+                <h4>border-box (Рекомендовано)</h4>
+                <p>Падінги та межі "з'їдають" місце всередині, не змінюючи загальну ширину блоку.</p>
+            </div>
+        </div>
+
+        <div class="theory-box">
+            <p><strong>Золоте правило інженерії:</strong> Завжди встановлюйте це на початку розробки:</p>
+            <pre><code class="language-css">* {
+  box-sizing: border-box;
+}</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Бронювання відсіку"</h4>
+            <p>Налаштуйте фізичні параметри ваших систем:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Ізоляція (Padding)</strong>
+                <p>Оберіть усі <code>&lt;p&gt;</code> та додайте їм внутрішній відступ 15px та світло-сірий фон, щоб текст не торкався країв.</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Товщина обшивки (Border)</strong>
+                <p>Для блоку з ID <code>#main-reactor</code> встановіть суцільну межу товщиною 4px синього кольору та зовнішній відступ <code>margin: 30px</code>.</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Точні габарити (Box-sizing)</strong>
+                <p>Створіть клас <code>.storage-cell</code>. Задайте йому ширину 200px, межу 10px та падінг 20px. Використайте <code>box-sizing: border-box</code>, щоб його фінальна ширина залишилася рівною 200px.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="c-02">
+       
+          ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="c-03" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>Урок 9: Flexbox — Системи автоматичного позиціонування</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Раніше інженери витрачали години, щоб вирівняти блоки по центру. Flexbox вирішує це миттєво. Він робить контейнер "гнучким", дозволяючи елементам всередині розширюватися, стискатися та вирівнюватися за заданими осями.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Активація Flex-контейнера</h3>
+        <p>Щоб система запрацювала, ми повинні призначити батьківському елементу (палубі) властивість <code>display: flex;</code>. Тепер усі прямі нащадки стають "гнучкими елементами" (flex-items).</p>
+
+        <div class="theory-box">
+            <pre><code class="language-css">.deck {
+  display: flex; /* Магія починається тут */
+  gap: 20px;     /* Дистанція між модулями */
+}</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>2. Головна та Поперечна осі</h3>
+        <p>Flexbox працює у двох вимірах. Ви повинні розуміти, куди спрямований потік енергії:</p>
+        
+        
+
+        <ul class="tech-list">
+            <li><code>flex-direction: row;</code> — (За замовчуванням) Елементи йдуть один за одним зліва направо (горизонтальна палуба).</li>
+            <li><code>flex-direction: column;</code> — Елементи йдуть зверху вниз (вертикальна ліфтова шахта).</li>
+        </ul>
+
+        <hr class="section-divider">
+
+        <h3>3. Вирівнювання: Justify та Align</h3>
+        <p>Це головні інструменти для точного націлювання модулів:</p>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                <h4>justify-content</h4>
+                <p>Керує вирівнюванням по <strong>головній осі</strong> (зазвичай горизонтально).</p>
+                <ul class="tech-list">
+                    <li><code>flex-start</code> — у лівий край.</li>
+                    <li><code>center</code> — точно по центру.</li>
+                    <li><code>space-between</code> — розштовхати до країв.</li>
+                </ul>
+            </div>
+            <div class="comp-item">
+                <h4>align-items</h4>
+                <p>Керує вирівнюванням по <strong>поперечній осі</strong> (зазвичай вертикально).</p>
+                <ul class="tech-list">
+                    <li><code>flex-start</code> — до стелі.</li>
+                    <li><code>center</code> — по центру висоти.</li>
+                    <li><code>stretch</code> — розтягнути на всю висоту.</li>
+                </ul>
+            </div>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Налаштування Командного містка"</h4>
+            <p>Застосуйте гнучкі технології до вашого інтерфейсу:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Горизонтальне меню</strong>
+                <p>Знайдіть список <code>&lt;ul&gt;</code> у вашій навігації. Зробіть його Flex-контейнером, щоб пункти меню вишикувалися в один ряд, та додайте <code>gap: 30px</code>.</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Ідеальний Центр</strong>
+                <p>Створіть секцію з ID <code>#emergency-panel</code>. Зробіть так, щоб усі кнопки всередині неї були розташовані точно по центру (і по горизонталі, і по вертикалі).</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Космічний Навбар</strong>
+                <p>Для вашого <code>&lt;header&gt;</code> встановіть <code>display: flex</code> та <code>justify-content: space-between</code>. Зробіть так, щоб логотип був зліва, а навігація — справа.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="c-03">
+      
+          ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="c-04" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>Урок 10: Неонове підсвічування та Візуальні ефекти</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Сучасний інтерфейс крейсера Orion має бути не лише функціональним, а й приємним для ока пілота. Ми використаємо закруглення, тіні та градієнти, щоб створити ефект скляних голографічних екранів.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Обтічність корпусу: border-radius</h3>
+        <p>У космосі гострі кути — це зайвий опір (принаймні в атмосфері). Властивість <code>border-radius</code> дозволяє закругляти краї блоків.</p>
+
+        <div class="theory-box">
+            <pre><code class="language-css">.panel {
+  border-radius: 15px; /* Легке закруглення */
+}
+
+.porthole {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Перетворює квадрат на ідеальне коло (ілюмінатор) */
+}</code></pre>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <h3>2. Енергетичне сяйво: box-shadow</h3>
+        <p>Щоб створити ефект неону або глибини, ми використовуємо тіні. Тінь може бути як зовнішньою (світіння), так і внутрішньою (втиснута панель).</p>
+
+        <div class="theory-box">
+            <h4>Синтаксис тіні:</h4>
+            <code>box-shadow: [X-зміщення] [Y-зміщення] [Розмиття] [Розтягування] [Колір];</code>
+            <pre><code class="language-css">.neon-btn {
+  /* Тінь без зміщення, але з великим розмиттям створює сяйво */
+  box-shadow: 0 0 15px #00f2ff; 
+}
+
+.inner-panel {
+  /* Ключове слово inset робить тінь внутрішньою */
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+}</code></pre>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <h3>3. Гіперпросторові переливи: Gradients</h3>
+        <p>Замість пласких кольорів ми використаємо градієнти. Це плавний перехід від одного кольору до іншого.</p>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                <h4>Linear Gradient</h4>
+                <p>Лінійний перехід (наприклад, зверху вниз або під кутом).</p>
+                <code>background: linear-gradient(to right, #1e3c72, #2a5298);</code>
+            </div>
+            <div class="comp-item">
+                <h4>Radial Gradient</h4>
+                <p>Розходиться колами від центру (ефект прожектора).</p>
+                <code>background: radial-gradient(circle, #333, #000);</code>
+            </div>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Рестайлінг містка"</h4>
+            <p>Оновіть зовнішній вигляд ваших систем:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Круглі сенсори</strong>
+                <p>Створіть квадратний блок <code>.sensor</code> (100x100 пікселів) і за допомогою <code>border-radius</code> зробіть його круглим ілюмінатором.</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Кнопка "Бойова тривога"</strong>
+                <p>Створіть кнопку з червоним фоном. Додайте їй червоне неонове сяйво за допомогою <code>box-shadow</code>, яке з’являється при наведенні курсору (використайте <code>:hover</code>).</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Голографічний екран</strong>
+                <p>Створіть блок <code>.monitor</code>. Задайте йому напівпрозорий темний фон через градієнт, закруглені кути 20px та внутрішню тінь (<code>inset</code>), щоб створити ефект увігнутого скла.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="c-04">
+     ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="c-05" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>Урок 10: Неонове підсвічування та Візуальні ефекти</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Сучасний інтерфейс крейсера Orion має бути не лише функціональним, а й приємним для ока пілота. Ми використаємо закруглення, тіні та градієнти, щоб створити ефект скляних голографічних екранів.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Обтічність корпусу: border-radius</h3>
+        <p>У космосі гострі кути — це зайвий опір (принаймні в атмосфері). Властивість <code>border-radius</code> дозволяє закругляти краї блоків.</p>
+
+        <div class="theory-box">
+            <pre><code class="language-css">.panel {
+  border-radius: 15px; /* Легке закруглення */
+}
+
+.porthole {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Перетворює квадрат на ідеальне коло (ілюмінатор) */
+}</code></pre>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <h3>2. Енергетичне сяйво: box-shadow</h3>
+        <p>Щоб створити ефект неону або глибини, ми використовуємо тіні. Тінь може бути як зовнішньою (світіння), так і внутрішньою (втиснута панель).</p>
+
+        <div class="theory-box">
+            <h4>Синтаксис тіні:</h4>
+            <code>box-shadow: [X-зміщення] [Y-зміщення] [Розмиття] [Розтягування] [Колір];</code>
+            <pre><code class="language-css">.neon-btn {
+  /* Тінь без зміщення, але з великим розмиттям створює сяйво */
+  box-shadow: 0 0 15px #00f2ff; 
+}
+
+.inner-panel {
+  /* Ключове слово inset робить тінь внутрішньою */
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+}</code></pre>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <h3>3. Гіперпросторові переливи: Gradients</h3>
+        <p>Замість пласких кольорів ми використаємо градієнти. Це плавний перехід від одного кольору до іншого.</p>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                <h4>Linear Gradient</h4>
+                <p>Лінійний перехід (наприклад, зверху вниз або під кутом).</p>
+                <code>background: linear-gradient(to right, #1e3c72, #2a5298);</code>
+            </div>
+            <div class="comp-item">
+                <h4>Radial Gradient</h4>
+                <p>Розходиться колами від центру (ефект прожектора).</p>
+                <code>background: radial-gradient(circle, #333, #000);</code>
+            </div>
+        </div>
+
+        
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Рестайлінг містка"</h4>
+            <p>Оновіть зовнішній вигляд ваших систем:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Круглі сенсори</strong>
+                <p>Створіть квадратний блок <code>.sensor</code> (100x100 пікселів) і за допомогою <code>border-radius</code> зробіть його круглим ілюмінатором.</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Кнопка "Бойова тривога"</strong>
+                <p>Створіть кнопку з червоним фоном. Додайте їй червоне неонове сяйво за допомогою <code>box-shadow</code>, яке з’являється при наведенні курсору (використайте <code>:hover</code>).</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Голографічний екран</strong>
+                <p>Створіть блок <code>.monitor</code>. Задайте йому напівпрозорий темний фон через градієнт, закруглені кути 20px та внутрішню тінь (<code>inset</code>), щоб створити ефект увігнутого скла.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="c-05">
+       ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="c-06" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>Урок 11: Оживлення систем — :hover та Transition</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Навіть найпотужніша броня має бути зручною. Псевдоклас <code>:hover</code> дозволяє елементам реагувати на наближення курсору, а властивість <code>transition</code> робить цю реакцію плавною та приємною для ока пілота.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Сенсор наближення: Псевдоклас :hover</h3>
+        <p>Це спеціальний стан елемента, який активується, коли миша знаходиться над ним. Це ідеально підходить для підсвічування кнопок або розгортання додаткової інформації.</p>
+
+        <div class="theory-box">
+            <pre><code class="language-css">.control-button {
+  background-color: #222;
+  color: white;
+}
+
+/* Стан при наведенні */
+.control-button:hover {
+  background-color: #00f2ff; /* Змінюємо колір на неоновий */
+  cursor: pointer;           /* Змінюємо вигляд курсору на "руку" */
+}</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>2. Гідравліка інтерфейсу: Властивість transition</h3>
+        <p>Без анімації колір змінюється миттєво. Властивість <code>transition</code> (перехід) дозволяє розтягнути цю зміну в часі, створюючи ефект плавної роботи механізмів.</p>
+
+        
+
+        <div class="theory-box">
+            <h4>Синтаксис плавного переходу:</h4>
+            <code>transition: [властивість] [час] [функція] [затримка];</code>
+            <pre><code class="language-css">.nav-link {
+  color: grey;
+  /* Плавна зміна кольору протягом 0.3 секунди */
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #00f2ff;
+}</code></pre>
+        </div>
+
+        <p><strong>Порада:</strong> Завжди пишіть <code>transition</code> у основному стані елемента, а не в <code>:hover</code>. Це забезпечить плавність і при наведенні, і коли миша покидає елемент.</p>
+
+        <hr class="section-divider">
+
+        <h3>3. Часові функції (Timing Functions)</h3>
+        <p>Як саме рухається анімація? Ми можемо налаштувати динаміку процесу:</p>
+        <ul class="tech-list">
+            <li><code>linear</code> — Рівномірна швидкість (механічно).</li>
+            <li><code>ease-in</code> — Повільний старт, швидкий фініш.</li>
+            <li><code>ease-out</code> — Швидкий старт, плавна зупинка (найприродніше для інтерфейсів).</li>
+            <li><code>ease-in-out</code> — Плавний старт і плавний фініш.</li>
+        </ul>
+
+        
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Інтерактивний місток"</h4>
+            <p>Налаштуйте відгук систем вашого корабля:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: М'яке підсвічування</strong>
+                <p>Для всіх посилань <code>&lt;a&gt;</code> у навігації додайте <code>transition: color 0.4s</code>. Зробіть так, щоб при наведенні їхній колір змінювався на ваш акцентний (наприклад, ціановий).</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Збільшення панелі (Transform)</strong>
+                <p>Створіть клас <code>.tech-card</code>. Зробіть так, щоб при наведенні картка плавно збільшувалася на 5% (<code>transform: scale(1.05);</code>) та додавала неонову тінь.</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Кнопка "Гіперстрибок"</strong>
+                <p>Створіть кнопку з ID <code>#jump-btn</code>. При наведенні вона повинна: 1) Змінити фон на градієнт. 2) Змінити колір тексту. 3) Плавно зміститися вгору на 5 пікселів (<code>transform: translateY(-5px);</code>).</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="c-06">
+      ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="c-07" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>Урок 12: Автономні системи та Класи-стани</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>На попередніх уроках ми навчили корабель реагувати на пілота. Сьогодні ми підемо далі: створимо автономні анімації, що працюють постійно, та закладемо логіку "бойових режимів", які активуються майбутнім JavaScript-кодом.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Автономні анімації: @keyframes</h3>
+        <p>Якщо <code>transition</code> потребує тригера (наприклад, наведення миші), то <strong>@keyframes</strong> дозволяє створити цикл, який працює сам по собі. Це ідеально для пульсації реактора або руху зірок за ілюмінатором.</p>
+
+        
+
+        <div class="theory-box">
+            <h4>Як це працює:</h4>
+            <ol>
+                <li>Спочатку описуємо сценарій через <code>@keyframes [назва]</code>.</li>
+                <li>Вказуємо стани (0% — початок, 100% — кінець, або проміжні точки).</li>
+                <li>Призначаємо цей сценарій елементу через властивість <code>animation</code>.</li>
+            </ol>
+            <pre><code class="language-css">/* Сценарій пульсації */
+@keyframes reactor-glow {
+  0% { box-shadow: 0 0 5px blue; }
+  50% { box-shadow: 0 0 25px cyan; }
+  100% { box-shadow: 0 0 5px blue; }
+}
+
+.core {
+  animation: reactor-glow 3s infinite ease-in-out;
+}</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="highlight-box">
+            <h3>⚡ ГОЛОВНИЙ АКЦЕНТ: Підготовка до JavaScript</h3>
+            <p>Зараз ми зробимо те, що роблять досвідчені інженери: створимо <strong>класи-стани</strong>. Це стилі, яких <strong>ще немає в нашому HTML-файлі</strong>. Вони "сплять" у файлі CSS і чекають своєї черги.</p>
+            <p><em>Пояснення для екіпажу:</em> "Ми пишемо інструкції для режимів, які наш майбутній JavaScript-код буде 'наклеювати' на блоки при натисканні кнопок або отриманні пошкоджень".</p>
+        </div>
+
+        <h3>2. Створення "сплячих" режимів</h3>
+        <p>Ось приклади класів, які ми активуємо пізніше за допомогою JS:</p>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                <h4>.red-alert (Бойова тривога)</h4>
+                <p>Змінює фон на червоний та додає миготливу анімацію.</p>
+                <pre><code class="language-css">.red-alert {
+  background-color: rgba(255, 0, 0, 0.2) !important;
+  border: 2px solid red;
+  animation: flash 1s infinite;
+}</code></pre>
+            </div>
+            <div class="comp-item">
+                <h4>.shield-active (Щити)</h4>
+                <p>Додає синє зовнішнє сяйво та напівпрозорість.</p>
+                <pre><code class="language-css">.shield-active {
+  box-shadow: 0 0 30px #00aaff;
+  opacity: 0.9;
+}</code></pre>
+            </div>
+            <div class="comp-item">
+                <h4>.hidden (Маскування)</h4>
+                <p>Повністю приховує блок з радару (інтерфейсу).</p>
+                <pre><code class="language-css">.hidden {
+  display: none;
+}</code></pre>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Програмування режимів Orion"</h4>
+            <p>Ваше завдання — підготувати CSS-базу для майбутньої логіки:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Пульсуючі вогні</strong>
+                <p>Створіть анімацію <code>@keyframes blink</code>, яка змінює прозорість (<code>opacity</code>) від 1 до 0.3. Призначте її класу <code>.status-light</code>.</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Режим "Тиша"</strong>
+                <p>Напишіть клас <code>.silent-mode</code>. Він має змінювати всі яскраві кольори тексту на темно-сірі та прибирати будь-які тіні (<code>box-shadow: none</code>).</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Повна ініціалізація (Hyperdrive)</strong>
+                <p>Створіть клас-стан <code>.hyperdrive</code>. При додаванні цього класу блок повинен: 1) Різко збільшитися. 2) Отримати біле розмите сяйво. 3) Мати внутрішню анімацію "тремтіння" (невеликі зміщення вліво-вправо через <code>transform</code>).</p>
+            </div>
+        </div>
+
+        <div class="theory-box">
+            <p><strong>Важливо:</strong> Коли ви перевірятимете ці стилі в браузері, ви нічого не побачите, бо цих класів немає в HTML. Щоб побачити результат зараз, <strong>вручну</strong> додайте назву класу в тег (наприклад: <code>&lt;div class="panel red-alert"&gt;</code>) в інспекторі коду.</p>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="c-07">
+        ✅ Відмітити як пройдений
+              </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="p-c01" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>ПРАКТИКА 5: Повна ініціалізація енергоброні</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>Це фінальний іспит з дизайну. Ви повинні перетворити стандартну сторінку на футуристичний інтерфейс крейсера Orion, використовуючи блокову модель, Flexbox та візуальні ефекти.</p>
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🚀 Технічне завдання: Проєкт "Orion Armor"</h4>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Системи життєзабезпечення (Основи)</strong>
+                <ul>
+                    <li>Встановіть для <code>body</code> темний космічний фон (наприклад, <code>#05070a</code>) та світлий шрифт без засічок.</li>
+                    <li>Зробіть <code>header</code> напівпрозорим за допомогою <code>rgba</code> та додайте нижню межу (border) акцентного кольору.</li>
+                    <li>Вирівняйте логотип та меню в <code>header</code> за допомогою <strong>Flexbox</strong> (justify-content: space-between).</li>
+                </ul>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Бронювання відсіків (Box Model)</strong>
+                <ul>
+                    <li>Для всіх секцій (<code>section</code>) додайте <code>padding: 20px</code> та <code>margin-bottom: 40px</code>.</li>
+                    <li>Налаштуйте таблицю характеристик: додайте <code>border-collapse: collapse</code>, внутрішні відступи для комірок та фоновий колір для "шапки" таблиці.</li>
+                    <li>Створіть картки для відео та аудіо: додайте їм <code>border-radius: 15px</code> та легке неонове сяйво через <code>box-shadow</code>.</li>
+                </ul>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Інтерактивні протоколи (States & Hover)</strong>
+                <ul>
+                    <li><strong>Ефект наведення:</strong> Зробіть так, щоб кнопки при наведенні плавно (<code>transition</code>) змінювали колір і трохи піднімалися вгору (<code>transform: translateY</code>).</li>
+                    <li><strong>Класи-стани (для майбутнього JS):</strong> Опишіть у CSS стилі для класів:
+                        <ul>
+                            <li><code>.red-alert</code> — робить фон червоним, а текст білим + анімація мигання.</li>
+                            <li><code>.shield-active</code> — додає навколо блоку синє розмите сяйво (box-shadow).</li>
+                            <li><code>.hidden</code> — встановлює <code>display: none</code>.</li>
+                        </ul>
+                    </li>
+                    <li>Створіть анімацію <code>@keyframes scan</code> для імітації роботи радара (лінія, що рухається по екрану).</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="theory-box">
+            <h4>🛡️ Порада інженера:</h4>
+            <p>Щоб перевірити "сплячі" класи-стани, відкрийте інспектор коду в браузері (F12), виберіть потрібний елемент і вручну додайте йому клас, наприклад <code>class="panel red-alert"</code>. Ви повинні побачити миттєву трансформацію!</p>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="p-c01">
+    ✅ Відмітити як пройдений
+        </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+<section id="c-07" class="lesson-section module-css">
+    <div class="lesson-header">
+        <span class="lesson-category">Модуль: Енергоброня (CSS)</span>
+        <h1>Урок 12: Автономні системи та Класи-стани</h1>
+    </div>
+
+    <div class="lesson-content">
+        <p>На попередніх уроках ми навчили корабель реагувати на пілота. Сьогодні ми підемо далі: створимо автономні анімації, що працюють постійно, та закладемо логіку "бойових режимів", які активуються майбутнім JavaScript-кодом.</p>
+
+        <hr class="section-divider">
+
+        <h3>1. Автономні анімації: @keyframes</h3>
+        <p>Якщо <code>transition</code> потребує тригера (наприклад, наведення миші), то <strong>@keyframes</strong> дозволяє створити цикл, який працює сам по собі. Це ідеально для пульсації реактора або руху зірок за ілюмінатором.</p>
+
+        
+
+        <div class="theory-box">
+            <h4>Як це працює:</h4>
+            <ol>
+                <li>Спочатку описуємо сценарій через <code>@keyframes [назва]</code>.</li>
+                <li>Вказуємо стани (0% — початок, 100% — кінець, або проміжні точки).</li>
+                <li>Призначаємо цей сценарій елементу через властивість <code>animation</code>.</li>
+            </ol>
+            <pre><code class="language-css">/* Сценарій пульсації */
+@keyframes reactor-glow {
+  0% { box-shadow: 0 0 5px blue; }
+  50% { box-shadow: 0 0 25px cyan; }
+  100% { box-shadow: 0 0 5px blue; }
+}
+
+.core {
+  animation: reactor-glow 3s infinite ease-in-out;
+}</code></pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="highlight-box">
+            <h3>⚡ ГОЛОВНИЙ АКЦЕНТ: Підготовка до JavaScript</h3>
+            <p>Зараз ми зробимо те, що роблять досвідчені інженери: створимо <strong>класи-стани</strong>. Це стилі, яких <strong>ще немає в нашому HTML-файлі</strong>. Вони "сплять" у файлі CSS і чекають своєї черги.</p>
+            <p><em>Пояснення для екіпажу:</em> "Ми пишемо інструкції для режимів, які наш майбутній JavaScript-код буде 'наклеювати' на блоки при натисканні кнопок або отриманні пошкоджень".</p>
+        </div>
+
+        <h3>2. Створення "сплячих" режимів</h3>
+        <p>Ось приклади класів, які ми активуємо пізніше за допомогою JS:</p>
+
+        <div class="comparison-box">
+            <div class="comp-item">
+                <h4>.red-alert (Бойова тривога)</h4>
+                <p>Змінює фон на червоний та додає миготливу анімацію.</p>
+                <pre><code class="language-css">.red-alert {
+  background-color: rgba(255, 0, 0, 0.2) !important;
+  border: 2px solid red;
+  animation: flash 1s infinite;
+}</code></pre>
+            </div>
+            <div class="comp-item">
+                <h4>.shield-active (Щити)</h4>
+                <p>Додає синє зовнішнє сяйво та напівпрозорість.</p>
+                <pre><code class="language-css">.shield-active {
+  box-shadow: 0 0 30px #00aaff;
+  opacity: 0.9;
+}</code></pre>
+            </div>
+            <div class="comp-item">
+                <h4>.hidden (Маскування)</h4>
+                <p>Повністю приховує блок з радару (інтерфейсу).</p>
+                <pre><code class="language-css">.hidden {
+  display: none;
+}</code></pre>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="practice-card">
+            <h4>🛠 Практикум: "Програмування режимів Orion"</h4>
+            <p>Ваше завдання — підготувати CSS-базу для майбутньої логіки:</p>
+            
+            <div class="level-task">
+                <strong>Рівень 1: Пульсуючі вогні</strong>
+                <p>Створіть анімацію <code>@keyframes blink</code>, яка змінює прозорість (<code>opacity</code>) від 1 до 0.3. Призначте її класу <code>.status-light</code>.</p>
+            </div>
+
+            <div class="level-task">
+                <strong>Рівень 2: Режим "Тиша"</strong>
+                <p>Напишіть клас <code>.silent-mode</code>. Він має змінювати всі яскраві кольори тексту на темно-сірі та прибирати будь-які тіні (<code>box-shadow: none</code>).</p>
+            </div>
+
+            <div class="level-task highlight">
+                <strong>Рівень 3: Повна ініціалізація (Hyperdrive)</strong>
+                <p>Створіть клас-стан <code>.hyperdrive</code>. При додаванні цього класу блок повинен: 1) Різко збільшитися. 2) Отримати біле розмите сяйво. 3) Мати внутрішню анімацію "тремтіння" (невеликі зміщення вліво-вправо через <code>transform</code>).</p>
+            </div>
+        </div>
+
+        <div class="theory-box">
+            <p><strong>Важливо:</strong> Коли ви перевірятимете ці стилі в браузері, ви нічого не побачите, бо цих класів немає в HTML. Щоб побачити результат зараз, <strong>вручну</strong> додайте назву класу в тег (наприклад: <code>&lt;div class="panel red-alert"&gt;</code>) в інспекторі коду.</p>
+        </div>
+    </div>
+
+    <button class="complete-btn" data-lesson="c07">
+        ✅ Відмітити як пройдений
+                </button>
+        <div class="lesson-navigation">
+          <button class="nav-btn prev-btn">← Попередній урок</button>
+          <button class="nav-btn next-btn">Наступний урок →</button>
+        </div>
+</section>
+
+
+      <section id="l-01" class="lesson-section module-js">
         <h1>Урок 1: Знайомство з JavaScript. Оживляємо сайт! 🚀</h1>
 
         <h2>1. Що таке JavaScript і навіщо він потрібен?</h2>
@@ -377,7 +2012,57 @@
 </div>
         
         <hr />
+<div class="video-dual-grid">
 
+    <div class="video-future-box">
+        <div class="future-box-inner">
+            <div class="future-box-header central-header">
+                <span class="pulse-dot"></span>
+                <h4>Модуль 1: Основи JS</h4>
+                <span class="pulse-dot"></span>
+            </div>
+            
+            <div class="video-responsive">
+                <iframe 
+                    src="https://www.youtube.com/embed/ID_ВІДЕО_1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <div class="future-box-footer text-center">
+                <p>Базовий синтаксис та змінні</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-future-box">
+        <div class="future-box-inner">
+            <div class="future-box-header central-header">
+                <span class="pulse-dot"></span>
+                <h4>Модуль 2: Функції</h4>
+                <span class="pulse-dot"></span>
+            </div>
+            
+            <div class="video-responsive">
+                <iframe 
+                    src="https://www.youtube.com/embed/ID_ВІДЕО_2" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <div class="future-box-footer text-center">
+                <p>Командні протоколи та логіка</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+ <hr />
         <h2>2. Як підключити JS до сторінки?</h2>
         <p>
           Щоб браузер зрозумів, що ти написав код JavaScript, його потрібно
@@ -534,7 +2219,7 @@ alert("Привіт, " + viewerName + "!");</code></pre>
         </div>
       </section>
 
-      <section id="l-02" class="lesson-section">
+      <section id="l-02" class="lesson-section module-js">
         <h1>Урок 2: Змінні та типи даних 📦</h1>
 
         <h2>1. Що таке змінні?</h2>
@@ -707,7 +2392,7 @@ const isUserLoggedIn = true;</code></pre>
         </div>
       </section>
 
-      <section id="l-03" class="lesson-section">
+      <section id="l-03" class="lesson-section module-js">
         <h1>Урок 3: Умовні оператори (if, else) та логіка 🔀</h1>
 
         <h2>1. Що таке розгалуження?</h2>
@@ -936,7 +2621,7 @@ if (userAge >= 16 && hasTicket === true) {
         </div>
       </section>
 
-      <section id="l-04" class="lesson-section">
+      <section id="l-04" class="lesson-section module-js">
         <h1>Урок 4: Цикли (for, while) — Автоматизуємо рутину 🔄</h1>
 
         <h2>1. Навіщо потрібні цикли?</h2>
@@ -1139,7 +2824,7 @@ for (let i = 0; i < 4; i++) {
         </div>
       </section>
 
-      <section id="l-05" class="lesson-section">
+      <section id="l-05" class="lesson-section module-js">
         <h1>Урок 5: Функції — Твої власні команди ⚙️</h1>
 
         <h2>1. Що таке функція?</h2>
@@ -1351,7 +3036,7 @@ console.log(`У мене є ${myMoney} гривень`);</code></pre>
         </div>
       </section>
 
-      <section id="p-01" class="lesson-section">
+      <section id="p-01" class="lesson-section module-js">
         <h1>Практична робота №1: Підсумки Блоку 1 🏆</h1>
 
         <h2>Симулятор Космічного Мандрівника 🚀</h2>
@@ -1599,7 +3284,7 @@ console.log(attackDrone(45));</code></pre>
         </div>
       </section>
 
-      <section id="l-06" class="lesson-section">
+      <section id="l-06" class="lesson-section ">
         <h1>Урок 6: Основи масивів. Списки стрімера 📋</h1>
 
         <h2>1. Що таке масив?</h2>
@@ -1688,7 +3373,7 @@ console.log(games.length); // Виведе 3</code></pre>
         </div>
       </section>
 
-      <section id="l-07" class="lesson-section">
+      <section id="l-07" class="lesson-section module-js">
         <h1>Урок 7: Методи масивів. Керуємо чатом! 🎮</h1>
 
         <h2>1. Навіщо масивам методи?</h2>
@@ -1789,7 +3474,7 @@ console.log(isHere); // -1 (такого глядача немає)</code></pre>
         </div>
       </section>
 
-      <section id="l-08" class="lesson-section">
+      <section id="l-08" class="lesson-section module-js">
         <h1>Урок 8: Об'єкти. Твій ігровий профіль 👤</h1>
 
         <h2>1. Що таке об'єкт і навіщо він потрібен?</h2>
@@ -1890,7 +3575,7 @@ bot.sayHi(); // "Привіт всім у чаті!..."</code></pre>
         </div>
       </section>
       
-      <section id="l-09" class="lesson-section">
+      <section id="l-09" class="lesson-section module-js">
         <h1>Урок 9: Прикладні задачі. Масиви об'єктів 🗂️</h1>
 
         <h2>1. Об'єднуємо сили: Масив + Об'єкти</h2>
@@ -1979,7 +3664,7 @@ friends.push({ nickname: "NewPlayer", level: 1, isOnline: true });</code></pre>
         </div>
       </section>
 
-      <section id="l-10" class="lesson-section">
+      <section id="l-10" class="lesson-section module-js">
         <h1>Урок 10: Що таке DOM? Скануємо корабель 🛰️</h1>
 
         <h2>1. Як JavaScript бачить твою сторінку?</h2>
@@ -2059,7 +3744,7 @@ statusDisplay.innerText = "🚨 ТРИВОГА: Астероїди!";</code></pr
         </div>
       </section>
 
-      <section id="l-11" class="lesson-section">
+      <section id="l-11" class="lesson-section module-js">
         <h1>Урок 11: Датчики та показники. Прямі стилі 📊</h1>
 
         <h2>1. Як JS змінює вигляд елементів?</h2>
@@ -2140,7 +3825,7 @@ fuelBar.style.width = fuelLevel + "%";</code></pre>
         </div>
       </section>
 
-      <section id="l-12" class="lesson-section">
+      <section id="l-12" class="lesson-section module-js">
         <h1>Урок 12: Події. Оживляємо кнопки ⚡</h1>
 
         <h2>1. Що таке подія?</h2>
@@ -2238,7 +3923,7 @@ fireBtn.addEventListener("click", () => {
           <button class="nav-btn next-btn">Наступний урок →</button>
         </div>
       </section>
-      <section id="l-13" class="lesson-section">
+      <section id="l-13" class="lesson-section module-js">
         <h1>Урок 13: Динамічне створення елементів 🖋️</h1>
 
         <h2>1. Навіщо створювати елементи через JS?</h2>
@@ -2321,7 +4006,7 @@ oldMessage.remove(); // Елемент зникне зі сторінки</code>
         </div>
       </section>
 
-      <section id="l-14" class="lesson-section">
+      <section id="l-14" class="lesson-section module-js">
         <h1>Урок 14: Режими корабля. Робота з класами (.classList) 🚨</h1>
 
         <h2>1. Чому .style — це не завжди зручно?</h2>
@@ -2404,7 +4089,7 @@ shipCabin.classList.toggle("shields-active");</code></pre>
         </div>
       </section>
       
-     <section id="l-15" class="lesson-section">
+     <section id="l-15" class="lesson-section module-js">
         <h1>Урок 15: Введення даних. Як працюють форми 🔑</h1>
 
         <h2>1. Що таке форма і навіщо вона потрібна?</h2>
@@ -2500,7 +4185,7 @@ btn.addEventListener("click", () => {
           <button class="nav-btn next-btn">Наступний урок →</button>
         </div>
       </section>
-    <section id="l-16" class="lesson-section">
+    <section id="l-16" class="lesson-section module-js">
         <h1>Урок 16: Термінал доступу. Подія submit 🖥️</h1>
 
         <h2>1. Чому кнопка перезавантажує сторінку?</h2>
@@ -2577,7 +4262,7 @@ loginForm.addEventListener("submit", (event) => {
           <button class="nav-btn next-btn">Наступний урок →</button>
         </div>
       </section>
-      <section id="l-17" class="lesson-section">
+      <section id="l-17" class="lesson-section module-js">
         <h1>Урок 17: Склад ресурсів. Вибір параметрів 📦</h1>
 
         <h2>1. Більше ніж просто текст</h2>
@@ -2689,7 +4374,7 @@ if (shieldOn.checked) {
           <button class="nav-btn next-btn">Наступний урок →</button>
         </div>
       </section>
-      <section id="l-18" class="lesson-section">
+      <section id="l-18" class="lesson-section module-js">
         <h1>Урок 18: Детектор помилок. Валідація даних 🛡️</h1>
 
         <h2>1. Навіщо перевіряти дані?</h2>
@@ -2769,7 +4454,7 @@ nameInput.addEventListener("input", () => {
           <button class="nav-btn next-btn">Наступний урок →</button>
         </div>
       </section>
-      <section id="l-19" class="lesson-section">
+      <section id="l-19" class="lesson-section module-js">
         <h1>Урок 19: Бортовий журнал. Фідбек користувачу 📢</h1>
 
         <h2>1. Чому alert — це погано?</h2>
@@ -2851,7 +4536,7 @@ if (energy < 20) {
 
       
 
-     <section id="p-02" class="lesson-section">
+     <section id="p-02" class="lesson-section module-js">
         <h1>Практична робота №2: Підсумки Блоку 2 🏆</h1>
 
         <h2>Симулятор Космічного Мандрівника: Бортовий комп'ютер 🌌</h2>
@@ -2988,7 +4673,7 @@ let totalEnergy = starship.energyCells[0] + starship.energyCells[1] + ...;
         </div>
       </section>
 
-     <section id="p-03" class="lesson-section">
+     <section id="p-03" class="lesson-section module-js">
         <h1>Практична робота №3: Візуалізація містка "Orion" 🏆</h1>
 
         <h2>Симулятор Космічного Мандрівника: Система виводу даних 🚀</h2>
@@ -3106,7 +4791,7 @@ fleet.forEach(ship => {
         </div>
       </section>
 
-      <section id="p-04" class="lesson-section">
+      <section id="p-04" class="lesson-section module-js">
         <h1>Практична робота №4: Командний центр 🏆</h1>
 
         <h2>Симулятор Космічного Мандрівника: Рекрутинг 👨‍🚀</h2>
@@ -3216,18 +4901,18 @@ fleet.forEach(ship => {
 
      
           
-       <section id="project-hub" class="lesson-section">
-    <div class="ship-header" style="margin-bottom: 30px;">
+    <section id="project-hub" class="lesson-section">
+        <div class="ship-header" style="margin-bottom: 30px;">
         <h1>🚀 Наскрізний проєкт: Космічний корабель</h1>
      
-<p>
+        <p>
           Протягом усього курсу ми будемо крок за кроком створювати власну
           браузерну гру! Після вивчення кожної нової теми ми будемо додавати
           нові функції до нашого корабля.
         </p>
       
         <p>Відстежуй свій прогрес: кожна галочка наближає тебе до фінального запуску системи.</p>
-    </div>
+        </div>
 
     <div class="dashboard-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
         <div class="ship-visualizer-container">
@@ -3273,7 +4958,7 @@ fleet.forEach(ship => {
     </svg>
 </div>
 
-      
+      <div class="milestone-grid">
         <div class="milestone-card" id="m1">
             <div class="status-badge" style="background: #1f2937; color: var(--accent); padding: 5px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: bold;">ПРАКТИКА 1</div>
             <h3 style="color: var(--accent-blue); margin: 10px 0;">🧠 Ядро інтелекту</h3>
@@ -3316,6 +5001,7 @@ fleet.forEach(ship => {
             </div>
         </div>
     </div>
+   
 </section>
     </main>
 

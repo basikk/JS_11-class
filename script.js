@@ -185,7 +185,7 @@ function initStartCourseButton() {
     const startCourseBtn = document.getElementById("start-course-btn");
     if (startCourseBtn) {
         startCourseBtn.addEventListener("click", () => {
-            const firstLessonLink = document.querySelector('.nav-link[data-target="l-01"]');
+            const firstLessonLink = document.querySelector('.nav-link[data-target="h-01"]');
             if (firstLessonLink) firstLessonLink.click();
         });
     }
@@ -272,38 +272,115 @@ function setupUserProfile(name) {
 // === 4. СИСТЕМА ПРОГРЕСУ УРОКІВ ===
 // ==========================================
 
-function getRankName(percentage) {
-    if (percentage >= 100) return "👨‍✈️ СТАТУС: Капітан Orion";
-    if (percentage >= 80)  return "👨‍🚀 СТАТУС: Старший помічник";
-    if (percentage >= 60)  return "🛰️ СТАТУС: Навігатор";
-    if (percentage >= 40)  return "🔧 СТАТУС: Бортовий інженер";
-    if (percentage >= 20)  return "🎖️ СТАТУС: Молодший офіцер";
-    return "🌑 СТАТУС: Кадет флоту";
+function getRankName(percent) {
+    if (percent === 100) return "Адмірал Оріону 👑";
+    if (percent >= 90)  return "Капітан корабля 👨‍✈️";
+    if (percent >= 75)  return "Старший офіцер 🎖";
+    if (percent >= 50)  return "Лейтенант флоту ⚔️";
+    if (percent >= 25)  return "Пілот-навігатор 🚀";
+    if (percent >= 10)  return "Спеціаліст збірки 🔧";
+    if (percent > 0)    return "Кадет-стажер 👨‍🚀";
+    return "Цивільний";
 }
 
 function updateProgress() {
+    // 1. Отримуємо всі кнопки на сторінці
     const allButtons = document.querySelectorAll(".complete-btn");
     const completedButtons = document.querySelectorAll(".complete-btn.completed");
     
+    // Рахуємо загальний прогрес
     const total = allButtons.length;
     const completed = completedButtons.length;
     const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
 
-    const bar = document.getElementById("sidebar-progress-fill");
-    const text = document.getElementById("progress-percent-text");
-    const statsText = document.getElementById("progress-stats-text");
+    // 2. Знаходимо елементи нової панелі за їх ID
+    const percentText = document.getElementById("progress-percent-text"); // Великі відсотки справа
+    const statsText = document.getElementById("progress-stats-text");     // Текст "Х з Y етапів" знизу
+    const rankElement = document.getElementById("progress-rank");         // Ранг зліва зверху
 
-    if (bar) bar.style.width = percentage + "%";
-    if (text) text.innerText = percentage + "%";
+    // Оновлюємо великі відсотки
+    if (percentText) percentText.innerText = percentage + "%";
 
-    if (statsText) {
-        const rank = getRankName(percentage);
-        statsText.innerHTML = `
-             <div>Пройдено: ${completed} з ${total} уроків</div>
-             <hr>
-             <div class="user-rank">${rank}</div>
-        `;
+    // Оновлюємо статистику знизу
+    if (statsText) statsText.innerText = `${completed} з ${total} етапів збірки`;
+
+    // Оновлюємо статус командира
+    if (rankElement) {
+        rankElement.innerText = getRankName(percentage);
+
+        // Бонус: якщо це Капітан (100%), додаємо золотий клас, який ми прописали в CSS
+        if (percentage >= 100) {
+            rankElement.classList.add("gold-rank");
+        } else {
+            rankElement.classList.remove("gold-rank");
+        }
     }
+
+// 2. Оновлюємо ім'я та ранг (з твоєї функції getRankName)
+    const nameEl = document.getElementById("commander-name");
+    const rankEl = document.getElementById("progress-rank");
+
+    if (nameEl) nameEl.textContent = (typeof currentUser !== 'undefined' && currentUser) ? currentUser : "Командир Orion";
+    if (rankEl) rankEl.textContent = getRankName(percentage);
+
+    // 2. ВИКЛИК НОВОЇ ФУНКЦІЇ ДЛЯ КОЛЬОРОВИХ ШКАЛ
+    updateOrionStatusPanel();
+}
+
+// НАДІЙНА ФУНКЦІЯ ПІДРАХУНКУ (Шукаємо по кнопках, а не по секціях)
+function updateOrionStatusPanel() {
+    // Збираємо ВСІ кнопки проходження на сторінці
+    const allButtons = document.querySelectorAll('.complete-btn');
+    if (allButtons.length === 0) return;
+
+    let htmlTotal = 0, htmlCompleted = 0;
+    let cssTotal = 0, cssCompleted = 0;
+    let jsTotal = 0, jsCompleted = 0;
+
+    // Проходимось по кожній кнопці
+    allButtons.forEach(btn => {
+        const isCompleted = btn.classList.contains('completed');
+        const lessonId = btn.getAttribute('data-lesson') || ""; // Отримуємо ID (наприклад, "l-01")
+
+        // 1. Корпус (HTML)
+        if (lessonId.startsWith('h-') || lessonId.startsWith('p-h')) {
+            htmlTotal++;
+            if (isCompleted) htmlCompleted++;
+        } 
+        // 2. Енергія (CSS)
+        else if (lessonId.startsWith('c-') || lessonId.startsWith('p-c')) {
+            cssTotal++;
+            if (isCompleted) cssCompleted++;
+        } 
+        // 3. Ядро (JS) - всі інші уроки (l-01, p-01 і т.д.)
+        else {
+            jsTotal++;
+            if (isCompleted) jsCompleted++;
+        }
+    });
+
+    const totalLessons = htmlTotal + cssTotal + jsTotal;
+    if (totalLessons === 0) return;
+
+    console.log(`Знайдено уроків JS: ${jsTotal}, з них пройдено: ${jsCompleted}`);
+
+    // Оновлюємо ширину кольорових шкал (повзунки)
+    const barHtml = document.getElementById('bar-html');
+    const barCss  = document.getElementById('bar-css');
+    const barJs   = document.getElementById('bar-js'); // Переконайся, що в HTML є <div id="bar-js">
+
+    if (barHtml) barHtml.style.width = ((htmlCompleted / totalLessons) * 100) + '%';
+    if (barCss)  barCss.style.width = ((cssCompleted / totalLessons) * 100) + '%';
+    if (barJs)   barJs.style.width = ((jsCompleted / totalLessons) * 100) + '%';
+
+    // Оновлюємо текст відсотків (той самий <span id="text-js">)
+    const textHtml = document.getElementById('text-html');
+    const textCss  = document.getElementById('text-css');
+    const textJs   = document.getElementById('text-js');
+
+    if (textHtml) textHtml.textContent = (htmlTotal > 0 ? Math.round((htmlCompleted / htmlTotal) * 100) : 0) + '%';
+    if (textCss)  textCss.textContent = (cssTotal > 0 ? Math.round((cssCompleted / cssTotal) * 100) : 0) + '%';
+    if (textJs)   textJs.textContent = (jsTotal > 0 ? Math.round((jsCompleted / jsTotal) * 100) : 0) + '%';
 }
 
 function initProgressSystem() {
@@ -321,7 +398,6 @@ function initProgressSystem() {
             unmarkLesson(btn, lessonId); 
         }
 
-        // Клонуємо кнопку, щоб очистити попередні обробники подій (запобігає дублюванню кліків)
         const newBtn = btn.cloneNode(true);
         btn.parentNode.replaceChild(newBtn, btn);
 
@@ -346,7 +422,7 @@ function initProgressSystem() {
 
 function markLessonAsDone(button, lessonId) {
     button.classList.add("completed");
-    button.innerHTML = "🎉 Урок успішно пройдено!";
+    button.innerHTML = "🎉 Етап успішно завершено!";
     const navLink = document.querySelector(`.nav-link[data-target="${lessonId}"]`);
     if (navLink && !navLink.innerHTML.includes("✅")) {
         navLink.innerHTML += " ✅";
