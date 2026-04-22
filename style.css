@@ -1405,14 +1405,22 @@ body[data-theme="dark"] .task-list .checkbox-label:hover {
 
 /* === Блок для вставки відео === */
 /* Основний контейнер з легким кольоровим відтінком */
+
+
 .video-future-box {
-    position: relative;
-    margin: 40px 0;
-    padding: 2px;
-    /* Градієнтна рамка */
+    width: 100%;           /* Займає всю ширину на малих екранах */
+    max-width: 750px;      /* ОБМЕЖЕННЯ: не ширше за 850px на великих екранах */
+    margin-left: auto;     /* Авто-відступ зліва для центрування */
+    margin-right: auto;    /* Авто-відступ справа для центрування */
+    margin-bottom: 30px;   /* Відступ від наступних елементів */
     background: linear-gradient(135deg, var(--accent-blue), #3a4454, var(--accent-blue));
     border-radius: 20px;
-    overflow: hidden;
+}
+
+/* Якщо це відео всередині подвійної сітки, воно не повинно мати обмежень */
+.video-dual-grid .video-future-box {
+    max-width: none;       /* В сітці воно розтягується на всю колонку */
+    margin: 0;             /* Прибираємо центрування, бо там працює Grid */
 }
 
 .future-box-inner {
@@ -1488,6 +1496,28 @@ body[data-theme="dark"] .task-list .checkbox-label:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* 1. Зменшуємо загальні відступи всередині блоку */
+.future-box-inner {
+    padding: 15px; /* Було 25px — стало компактніше */
+}
+
+/* 2. Прибираємо зайві відступи, якщо елементів немає */
+.future-box-header:empty, 
+.future-box-footer:empty {
+    display: none; /* Якщо в блоці нічого немає, він не займає місця */
+}
+
+/* 3. Опціонально: Клас для ще компактнішого вигляду */
+.video-future-box.compact {
+    max-width: 700px; /* Робимо блок вужчим за замовчуванням */
+}
+
+.video-future-box.compact .future-box-header {
+    margin-bottom: 10px; /* Менше місця між заголовком та відео */
+}
+
+
 
 /* --- СВІТЛА ТЕМА --- */
 [data-theme="light"] .future-box-inner {
