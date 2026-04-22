@@ -286,7 +286,7 @@ body {
 
 .modal-description {
   color: var(--text-main) !important; /* Гарантуємо, що текст не злиється */
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   margin-bottom: 25px;
   opacity: 0.9;
@@ -301,7 +301,7 @@ body {
 .shake-animation { animation: shake 0.2s ease-in-out 0s 2; }
 
 .modal-note {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-main);
   opacity: 0.5;
   margin-top: 20px;

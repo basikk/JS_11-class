@@ -185,7 +185,7 @@ function initStartCourseButton() {
     const startCourseBtn = document.getElementById("start-course-btn");
     if (startCourseBtn) {
         startCourseBtn.addEventListener("click", () => {
-            const firstLessonLink = document.querySelector('.nav-link[data-target="h-01"]');
+            const firstLessonLink = document.querySelector('.nav-link[data-target="l-01"]');
             if (firstLessonLink) firstLessonLink.click();
         });
     }
