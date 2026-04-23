@@ -380,9 +380,10 @@ body {
 }
 
 .user-role {
-  font-size: 0.75rem;
+  font-weight: bold;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  color: #8e9bb0;
+  color: #eaee17;
   letter-spacing: 0.5px;
   margin-bottom: 2px;
 }
@@ -390,13 +391,15 @@ body {
 
 
 #user-display {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
+    font-weight: bold;
+    color: var(--accent-blue, #00f2ff);
+    text-shadow: 0 0 8px rgba(191, 19, 214, 0.4);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   text-overflow: ellipsis; /* Додає "..." якщо ім'я задовге */
 }
+
 
 
 
@@ -441,10 +444,6 @@ body {
     flex-direction: column;
     justify-content: center;
 }
-
-
-
-
 
 
 
@@ -518,7 +517,7 @@ margin: 10px;
     font-weight: bold;
     color: var(--accent-blue, #00f2ff);
     text-shadow: 0 0 8px rgba(191, 19, 214, 0.4);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
